@@ -6,9 +6,13 @@
 
 package Interfaz;
 
+import Datos.CDKiosco;
+import Negocio.CNKiosco;
+import VO.CVOKiosco;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
-
 /**
  *
  * @author Tavon
@@ -75,7 +79,11 @@ public class CIConsultaDia extends javax.swing.JFrame {
             jBuscar.setText("Buscar");
             jBuscar.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jBuscarActionPerformed(evt);
+                    try {
+                        jBuscarActionPerformed(evt);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(CIConsultaDia.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             });
 
@@ -131,8 +139,15 @@ public class CIConsultaDia extends javax.swing.JFrame {
         mp.setVisible(true);
     }                                        
 
-    private void jBuscarActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        
+    private void jBuscarActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {
+        try{
+            CNKiosco oNKiosco = new CNKiosco();
+            CVOKiosco oVKiosco = new CVOKiosco();
+            oVKiosco = oNKiosco.buscaKiosco(1L);
+            System.out.println(oVKiosco.getUbicacion());
+        }catch(SQLException sqle){
+            
+        }
     }                                       
 
     
