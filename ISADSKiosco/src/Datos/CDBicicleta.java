@@ -20,9 +20,19 @@ public class CDBicicleta {
     private Statement    mInstruccionSQL = null;
     private ResultSet    mResultSet = null;
     
+    /**
+     *Creación del constructor
+     */
     public CDBicicleta() {
         this.mDAOFactory = new CDDAOFactory();
     }
+
+    /**
+     *Consulta los datos de Bicicleta
+     * @param pidBicicleta
+     * @return obtiene los datos de la bicicleta buscada
+     * @throws SQLException ocurre cuando no es posible establecer la conexión con la base de datos
+     */
     public CVOBicicleta buscaBicicleta(Long pidBicicleta) throws SQLException{
         String     lSQuery = "SELECT * FROM Bicicleta WHERE idBicicleta = '"+pidBicicleta+"'";
         System.out.println(lSQuery);
@@ -44,7 +54,7 @@ public class CDBicicleta {
         } catch (SQLException ex) {
             ex.printStackTrace();
             if (this.mConexion == null) {
-                throw new SQLException("No es posible establecer la conexion");
+                throw new SQLException("No es posible establecer la conexión");
             }
         }catch(NullPointerException npe){
             return null;
