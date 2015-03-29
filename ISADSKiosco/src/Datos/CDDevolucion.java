@@ -23,21 +23,20 @@ public class CDDevolucion {
     private Statement    mInstruccionSQL = null;
     private ResultSet    mResultSet = null;
 
-    /*
-     * Obtiene registros de la base de datos
-     * @return un ArrayList conteniendo los datos
-     * @throws SQLException En caso de error SQL
+    /**
+     *
      */
+    
     public CDDevolucion() {
         this.mDAOFactory = new CDDAOFactory();
     }
     
-    /*
-     * Elimina un registro
-     * @param alumno VoAlumno con los valores del registro a eliminar
-     * @throws SQLException En caso de error
+    /**
+     *Obtiene un listado de la devolucion
+     * @param pVODevolucion
+     * @throws SQLException en caso de error
      */
-   
+    
     public void setAgregaDevolucion(CVODevolucion pVODevolucion) throws SQLException{
         try {
             //String con la instrucción SQL
@@ -89,13 +88,15 @@ public class CDDevolucion {
         
     }
     
+    /**
+     *Actualiza el estado de la renta a 'DEV'
+     * @param idrenta
+     */
     public void setDevuelve(Long idrenta) {
 
         try {
             String lSQuery ="UPDATE `bdbicicletas`.`renta` SET `statRenta`='DEV' WHERE `idrenta`="+ idrenta;
-            // UPDATE `BDEscuela`.`Alumno` SET `NomAlumno`='esteban', `FechNacAlumno`='eeeeeaaa' WHERE `Matricula`='eeeee';
-
-
+            
             System.out.println(lSQuery); //para efectos de depuracion
             //Obtiene una conexiÛn con la base de datos
             this.mConexion = mDAOFactory.abreConexion();
@@ -131,6 +132,7 @@ public class CDDevolucion {
      * Cierra la conexión
      * @throws SQLException En caso de no poder cerrar la conexiÛn
      */
+    
     public void CierraConexion()throws SQLException {
         if(mConexion != null) {
             mConexion.close();
@@ -138,12 +140,16 @@ public class CDDevolucion {
         }
     }
    
+    /**
+     * Obtiene una lista con los atributos a partir del id
+     * @param id
+     * @return lista
+     */
     public ResultSet devolucion(String id){
         try {
             String lSQuery ="SELECT R.idBicicleta, R.idRenta, R.idCliente, C.nombreCliente FROM renta R, cliente C, bicicleta B "
                     + "WHERE R.idBicicleta ='"+id+"' AND R.idBicicleta=B.idBicicleta AND R.idCliente = C.idCliente" ;
-            // UPDATE `BDEscuela`.`Alumno` SET `NomAlumno`='esteban', `FechNacAlumno`='eeeeeaaa' WHERE `Matricula`='eeeee';
-
+           
             this.mConexion = mDAOFactory.abreConexion();
             //	Crea el statement
             mInstruccionSQL = mConexion.createStatement();
@@ -158,11 +164,14 @@ public class CDDevolucion {
             e.printStackTrace();
         }        return mResultSet;
     }
+
+    /**
+     * Actualiza el estado de la bicicleta y la pone como disponible
+     * @param idBicicleta
+     */
     public void actualizaTablaBicicleta(String idBicicleta){
         try {
             String lSQuery ="UPDATE `bdbicicletas`.`bicicleta` SET `statBicicleta`='Disponible' WHERE `idBicicleta`="+ idBicicleta;
-                    
-            // UPDATE `BDEscuela`.`Alumno` SET `NomAlumno`='esteban', `FechNacAlumno`='eeeeeaaa' WHERE `Matricula`='eeeee';
 
             this.mConexion = mDAOFactory.abreConexion();
             //	Crea el statement
@@ -178,6 +187,11 @@ public class CDDevolucion {
             e.printStackTrace();
         }
     }
+
+    /**
+     *Elimina el registro de la renta
+     * @param idBicicleta
+     */
     public void eliminaRegistroRenta(String idBicicleta){
         try {
             String lSQuery = "DELETE FROM renta WHERE " +
@@ -200,6 +214,14 @@ public class CDDevolucion {
             
         }
     }
+
+    /**
+     * Se actualiza la tabla devolucion
+     * @param idRenta
+     * @param idCliente
+     * @param idBicicleta
+     * @param nombreCliente
+     */
     public void actualizarTablaDevolucion(String idRenta, String idCliente, String idBicicleta, String nombreCliente){
         try {
             String lSQuery = "INSERT INTO `bdbicicletas`.`devolucion` (`idRenta`, `idCliente`, `idBicicleta`, `nombreCliente`, `fechaInicio`, `fechaDevolucion`, `multa`) VALUES ('"+idRenta+"', '"+idCliente+"', '"+idBicicleta+"', '"+nombreCliente+"', '0000-00-00','0000-00-00', '0')";
@@ -215,7 +237,7 @@ public class CDDevolucion {
             //Guarda los cambios
             //mConexion.commit();
             
-            System.out.println("*****************SI SE CNETO CON DEVOLUCIO¨******************");
+            System.out.println("*****************SI SE CONECTO CON DEVOLUCION*****************");
         }
         catch (SQLException e) {
             System.out.println("****************No se hizo la actualizacion de devolucion*****************");
