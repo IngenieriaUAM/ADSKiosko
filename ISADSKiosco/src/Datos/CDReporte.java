@@ -21,10 +21,18 @@ public class CDReporte {
     private Statement    mInstruccionSQL = null;
     private ResultSet    mResultSet = null;
     
+    /**
+     *
+     */
     public CDReporte() {
         this.mDAOFactory = new CDDAOFactory();
     }
     
+    /**
+     * Obtiene registros de reporte de la base de datos
+     * @return un ArrayList conteniendo los datos
+     * @throws SQLException En caso de error SQL
+     */
     public ArrayList<CVOReporte> getListaReporte()throws SQLException {
         String     lSQuery = "SELECT * FROM Reportes";
         ArrayList<CVOReporte> lALListaReportes = new ArrayList<CVOReporte>();
@@ -73,7 +81,11 @@ public class CDReporte {
         return lALListaReportes;
     }
     
-    
+    /**
+     * Agrega un reporte en la base de datos
+     * @param pVOReporte
+     * @throws SQLException en caso de error SQL
+     */
     public void setAgregaReporte(CVOReporte pVOReporte) throws SQLException {
         try {
             //String con la instrucción SQL
