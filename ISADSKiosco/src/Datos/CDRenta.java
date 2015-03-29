@@ -21,16 +21,18 @@ public class CDRenta {
     private Statement    mInstruccionSQL = null;
     private ResultSet    mResultSet = null;
 
+    
     public CDRenta() {
         this.mDAOFactory = new CDDAOFactory();
     }
 
-    
-    /*
-     * Agrega un registro a la base de datos
-     * @param alumno VoAlumno con los datos a a gregar
-     * @throws SQLException En caso de Error
+      
+    /**
+     * Agrega un registro de renta a la base de datos
+     * @param pVORenta
+     * @throws SQLException
      */
+    
     public void setAgregaRenta(CVORenta pVORenta) throws SQLException {
         try {
             //String con la instrucción SQL
@@ -76,6 +78,12 @@ public class CDRenta {
 	}
     }
     
+    /**
+     * Hace busqueda de la renta
+     * @param idRenta
+     * @return
+     * @throws SQLException
+     */
     public CVORenta buscaRenta(Long idRenta) throws SQLException {
         String     lSQuery = "SELECT * FROM Renta WHERE idBicicleta = '"+idRenta+"'";
         System.out.println(lSQuery);
