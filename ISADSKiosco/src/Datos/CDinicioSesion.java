@@ -21,10 +21,17 @@ public class CDinicioSesion {
     private Statement    mInstruccionSQL = null;
     private ResultSet    mResultSet = null;
     
+    
     public CDinicioSesion() {
         this.mDAOFactory = new CDDAOFactory();
     }
     
+    /**
+     * Muestra el inicio de sesion del sistema
+     * @param pVOUsuario
+     * @return
+     * @throws SQLException
+     */
     public boolean hayUsuario(CVOUsuario pVOUsuario)throws SQLException {
         String lSQuery = "SELECT * FROM Empleado WHERE nomUsuario = '"+ pVOUsuario.getNombreUsuario()+"' AND  contra = '"+pVOUsuario.getContra()+"'";
         System.out.println(lSQuery);
@@ -68,6 +75,10 @@ public class CDinicioSesion {
         return false;
     }
     
+    /**
+     * Cierra la conexion 
+     * @throws SQLException en caso de no poder cerrar la conexion
+     */
     public void CierraConexion()throws SQLException {
         if(mConexion != null) {
             mConexion.close();
