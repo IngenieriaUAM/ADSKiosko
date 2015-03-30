@@ -118,6 +118,8 @@ public class CDAlta {
             this.mConexion.commit();
 	} 
         catch (SQLException e) {
+            if(e.getErrorCode()==0)
+                JOptionPane.showMessageDialog(null, "Cliente agregado correctamente");
             System.out.println(e.getErrorCode());
             if (e.getErrorCode() == 1062)
                 throw new SQLException("Matricula Repedida");
