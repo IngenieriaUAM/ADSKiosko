@@ -7,6 +7,8 @@ package Negocio;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import VO.CVOCliente;
+import Datos.CDAlta;
 import Datos.CDPago;
 import VO.CVOPago;
 /**
@@ -31,9 +33,5 @@ public class CNPago {
     public void setAgregaPago(CVOPago pVOPago) throws SQLException {
 
         oDPago.setAgregaPago(pVOPago);
-    }
-
-    public CVOPago buscaPago(Long idCliente) throws SQLException {
-        return oDPago.buscaPago(idCliente);
     }
 }
