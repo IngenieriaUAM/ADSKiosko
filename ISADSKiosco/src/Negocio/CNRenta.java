@@ -14,14 +14,29 @@ import Datos.CDRenta;
 public class CNRenta {
     private CDRenta oDRenta;
 
+    /**
+     * Constructor de la clase
+     */
     public CNRenta() {
         oDRenta=new CDRenta();
     }
+
+    /**
+     * Agrega la renta a CVORenta
+     * @param pVORenta
+     * @throws SQLException en caso de error SQL
+     */
     public void setAgregaRenta(CVORenta pVORenta) throws SQLException {
 
         oDRenta.setAgregaRenta(pVORenta);
     }
     
+    /**
+     * Hace la busqueda de la renta en CVORenta
+     * @param pVORenta
+     * @return
+     * @throws SQLException en caso de error
+     */
     public CVORenta buscaRenta(Long pVORenta) throws SQLException{
         return oDRenta.buscaRenta(pVORenta);
     }
