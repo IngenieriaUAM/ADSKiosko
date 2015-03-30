@@ -17,10 +17,19 @@ public class CNBicicleta {
     
     private CDBicicleta oDBicicleta;
 
+    /**
+     * Constructor de la clase
+     */
     public CNBicicleta() {
         oDBicicleta = new CDBicicleta();
     }
     
+    /**
+     * Hace busqueda de la bicicleta en CVOBicicleta
+     * @param pidBicicleta
+     * @return oDBicicleta
+     * @throws SQLException en caso de error SQL
+     */
     public CVOBicicleta buscaBicicleta(Long pidBicicleta) throws SQLException{
         return oDBicicleta.buscaBicicleta(pidBicicleta);
     }
