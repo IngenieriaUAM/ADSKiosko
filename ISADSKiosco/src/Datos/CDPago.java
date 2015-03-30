@@ -8,7 +8,6 @@ package Datos;
 import java.util.ArrayList;
 import VO.CVOCliente;
 import VO.CVOPago;
-
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -24,6 +23,12 @@ public class CDPago {
     private CDDAOFactory mDAOFactory = null;
     private Statement    mInstruccionSQL = null;
     private ResultSet    mResultSet = null;
+
+    public CDPago() {
+        mDAOFactory=new CDDAOFactory();
+    }
+    
+    
     
     public ArrayList<CVOPago> getListaPago()throws SQLException {
         String     lSQuery = "SELECT * FROM Pago";
@@ -75,7 +80,50 @@ public class CDPago {
         return lALListaPago;
     }
 
-    public void setAgregaPago(CVOPago pVOPago) {
+    public void setAgregaPago(CVOPago pVOPago) throws SQLException {
+        try {
+            //String con la instrucción SQL
+            
+	    String lSQuery = "INSERT INTO Pago (monto, idCliente, nombreCliente,fechaPago) " +
+                        "VALUES( " + "'" + pVOPago.getMonto() + "', " +
+		                     "'" + pVOPago.getIdCliente() + "', " +
+                                     "'" + pVOPago.getNombreCliente() + "', " +
+		                     "now());";
+            System.out.println(lSQuery); //para efectos de depuracion
+            //Obtiene una conexiÛn con la base de datos
+            this.mConexion = mDAOFactory.abreConexion();
+            //Crea la InstrucciÛn
+            this.mInstruccionSQL = mConexion.createStatement();
+            //Ejecuta la sentencia SQL
+            this.mInstruccionSQL.execute(lSQuery);
+            //Guarda los cambios
+            this.mConexion.commit();
+	} 
+        catch (SQLException e) {
+            System.out.println(e.getErrorCode());
+            if (e.getErrorCode() == 0 )
+                JOptionPane.showMessageDialog(null, "Se ha agregado el pago correctamente");
+            if (e.getErrorCode() == 1062)
+                throw new SQLException("Id Repedido");
+            if (this.mConexion == null) {
+                throw new SQLException("No es posible establecer la conexion");
+            }
+	}
+        finally {
+            try {
+                //Cierra el statement
+                if(this.mInstruccionSQL != null) {
+                    this.mInstruccionSQL.close();
+                }
+                //Cerramos conexion
+                if(this.mConexion != null) {
+                    this.mConexion.close();
+                }
+            } 
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
+	}
         
     }
     
