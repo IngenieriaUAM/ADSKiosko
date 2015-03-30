@@ -36,9 +36,8 @@ public class CDRenta {
     public void setAgregaRenta(CVORenta pVORenta) throws SQLException {
         try {
             //String con la instrucción SQL
-	    String lSQuery = "INSERT INTO Renta ( idRenta, idCliente, fechaInicio,idBicicleta, statRenta,idKiosco) " +
-                        "VALUES( " + "'" + pVORenta.getIdRenta() + "', " +
-		                     "'" + pVORenta.getIdCliente()+ "'," +
+	    String lSQuery = "INSERT INTO Renta (idCliente, fechaInicio,idBicicleta, statRenta,idKiosco) " +
+                        "VALUES( " + "'" + pVORenta.getIdCliente()+ "'," +
                                      "now()," +
                                      "'" + pVORenta.getIdBicicleta()+ "'," +
                                      "'" + pVORenta.getStatRenta()+ "'," +

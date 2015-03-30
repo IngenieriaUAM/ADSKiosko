@@ -102,6 +102,7 @@ public class CIDevolucion extends javax.swing.JFrame {
 
         jLabel2.setText("Id Renta");
 
+        txtFidRenta.setEditable(false);
         txtFidRenta.setText(" ");
         txtFidRenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,11 +114,19 @@ public class CIDevolucion extends javax.swing.JFrame {
 
         jLabel4.setText("Nombre");
 
+        txtFnombreCliente.setEditable(false);
+
         jLabel5.setText("Id Bicicleta");
+
+        txtFidBicicleta.setEditable(false);
 
         jLabel6.setText("Multa");
 
+        txtFidCliente.setEditable(false);
+
         jLabel7.setText("Tipo");
+
+        txtFtipoBicicleta.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

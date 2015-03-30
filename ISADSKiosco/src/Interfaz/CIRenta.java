@@ -4,17 +4,22 @@
  */
 package Interfaz;
 
+import Negocio.CNAlta;
+import Negocio.CNBicicleta;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import VO.CVOCliente;
 import VO.CVORenta;
 import Negocio.CNRenta;
+import VO.CVOBicicleta;
 //import Negocio.CNCliente;
 import java.awt.event.ActionEvent;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -43,7 +48,7 @@ public class CIRenta extends javax.swing.JFrame {
         java.sql.Date max= new java.sql.Date(Fech().getTime()+63113800000L);
         java.sql.Date min= new java.sql.Date(Fech().getTime()-1262276000000L);
         //jDateFechaRent.setSelectableDateRange(min,max);
-        jTxtCvRenta.setText(claveRenta());
+        
 
     }
      public final Date Fecha(){
@@ -52,29 +57,6 @@ public class CIRenta extends javax.swing.JFrame {
       return resta; // Devuelve el objeto Date con los nuevos días añadidos
  }
 
-public String claveRenta(){
-    String anio,mes,dia,hora,minutos,seg;
-    Calendar fecha = Calendar.getInstance();
-        
-    anio = fecha.get(Calendar.YEAR)+"";
-    mes = (fecha.get(Calendar.MONTH)+1)+"";
-    dia = fecha.get(Calendar.DAY_OF_MONTH)+"";
-    hora = fecha.get(Calendar.HOUR)+"";
-    minutos = fecha.get(Calendar.MINUTE)+"";
-    seg = fecha.get(Calendar.SECOND)+"";
-        
-    seg = seg.substring(0, 1);
-    anio = anio.substring(2,4);
-    if(mes.length() == 1)
-        mes = 0+mes;
-    if(dia.length() == 1)
-        dia = 0+dia;
-    if(hora.length() == 1)
-        hora = 0+hora;
-    if(minutos.length() == 1)
-        minutos = 0+minutos;
-    return dia+hora+minutos+seg;
-}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,8 +76,6 @@ public String claveRenta(){
         jLabel6 = new javax.swing.JLabel();
         jBtnRealizar = new javax.swing.JButton();
         jBtnCancelar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jTxtCvRenta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("RENTA");
@@ -108,17 +88,22 @@ public String claveRenta(){
 
         jLabel2.setText("Nombre:");
 
+        jTxtIdCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTxtIdClienteFocusLost(evt);
+            }
+        });
         jTxtIdCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTxtIdClienteActionPerformed(evt);
             }
         });
         jTxtIdCliente.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTxtIdClienteKeyPressed(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTxtIdClienteKeyTyped(evt);
+            }
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTxtIdClienteKeyPressed(evt);
             }
         });
 
@@ -144,15 +129,6 @@ public String claveRenta(){
             }
         });
 
-        jLabel4.setText("CvRenta:");
-
-        jTxtCvRenta.setEditable(false);
-        jTxtCvRenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtCvRentaActionPerformed(evt);
-            }
-        });
-
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -173,14 +149,11 @@ public String claveRenta(){
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(jLabel2)
-                            .add(jLabel1)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jLabel4))
+                            .add(jLabel1))
                         .add(45, 45, 45)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jTxtNomCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 286, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, jTxtCvRenta)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, jTxtIdCliente, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)))))
+                            .add(jTxtIdCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(89, Short.MAX_VALUE))
@@ -192,11 +165,7 @@ public String claveRenta(){
                 .add(jLabel6)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel4)
-                    .add(jTxtCvRenta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 11, Short.MAX_VALUE)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel1)
                     .add(jTxtIdCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -244,13 +213,17 @@ public String claveRenta(){
         
         CNRenta oNRenta;
         CVORenta oVORenta;
+        CNBicicleta oNBicicleta = new CNBicicleta();
+        CVOBicicleta oVBicicleta = new CVOBicicleta();
         oNRenta= new CNRenta();
 
         try {
-            oVORenta = new CVORenta(Long.parseLong(jTxtCvRenta.getText()),"now()","",Long.parseLong(jTxtIdCliente.getText()),Long.parseLong(jTxtIdBicicleta.getText()),"Rent",1L);
+            oVORenta = new CVORenta(0L,"now()","",Long.parseLong(jTxtIdCliente.getText()),Long.parseLong(jTxtIdBicicleta.getText()),"Rent",1L);
+            oVBicicleta = oNBicicleta.buscaBicicleta(oVORenta.getIdBicicleta());
             if(jTxtIdCliente.getText().equals("")||jTxtNomCliente.getText().equals("")||jTxtIdBicicleta.getText().equals(""))
                 throw new NumberFormatException();
-            System.out.println(oVORenta.getIdRenta()+" "+oVORenta.getFechaInicio()+" "+oVORenta.getFechaDev()+" "+oVORenta.getIdCliente()+" "+oVORenta.getIdBicicleta()+" "+oVORenta.getStatRenta());
+            if(!oVBicicleta.getStatBicicleta().equals("Disponible"))
+                throw new Error();
             oNRenta.setAgregaRenta(oVORenta);
         }
         catch(NullPointerException e){
@@ -261,6 +234,8 @@ public String claveRenta(){
         }
         catch (SQLException e) {
             JOptionPane.showMessageDialog(this,e.getMessage(),"Error en Datos", JOptionPane.ERROR_MESSAGE);
+        }catch (Error e){
+            JOptionPane.showMessageDialog(this,"Error, Bicicleta no disponible" ,"Error",JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_jBtnRealizarActionPerformed
@@ -312,9 +287,17 @@ public String claveRenta(){
                 }    
     }//GEN-LAST:event_jTxtNomClienteKeyTyped
 
-    private void jTxtCvRentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCvRentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtCvRentaActionPerformed
+    private void jTxtIdClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTxtIdClienteFocusLost
+        CNAlta oNAlta = new CNAlta();
+        CVOCliente oVCliente = new CVOCliente();
+        try {
+            oVCliente = oNAlta.buscaCliente(Long.parseLong(jTxtIdCliente.getText()));
+            jTxtNomCliente.setText(oVCliente.getNombreCliente());
+        } catch (SQLException ex) {
+            Logger.getLogger(CIRenta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jTxtIdClienteFocusLost
 
     public final Date Fech(){
       java.util.Date Date=new java.util.Date();
@@ -365,10 +348,8 @@ public String claveRenta(){
     private javax.swing.JLabel jLTarjeta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTxtCvRenta;
     private javax.swing.JTextField jTxtIdBicicleta;
     private javax.swing.JTextField jTxtIdCliente;
     private javax.swing.JTextField jTxtNomCliente;

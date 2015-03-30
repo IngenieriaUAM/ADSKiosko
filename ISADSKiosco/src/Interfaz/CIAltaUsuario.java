@@ -44,7 +44,7 @@ public class CIAltaUsuario extends javax.swing.JFrame {
         jTxtidCliente.setEditable(false);
         if (pOp != AGREGAR) {
             VOAlta = (CVOCliente) pListaClientes.get(pRegSel);
-            mVOCliente = new CVOCliente(VOAlta.getidCliente(), VOAlta.getNombreCliente(), VOAlta.getFechaNacimiento(),VOAlta.getSexo(),VOAlta.getTarjeta(),VOAlta.getCodigoTarjeta(),VOAlta.getDireccion(),VOAlta.getFechaInsc(),VOAlta.getidKiosco());
+            mVOCliente = new CVOCliente(VOAlta.getidCliente(), VOAlta.getNombreCliente(), VOAlta.getFechaNacimiento(),VOAlta.getSexo(),VOAlta.getTarjeta(),VOAlta.getCodigoTarjeta(),VOAlta.getDireccion(),VOAlta.getFechaInsc(),VOAlta.getidKiosco(),VOAlta.getEstadoPago(),VOAlta.getSaldo());
             jTxtidCliente.setText(VOAlta.getidCliente().toString());
             jTTarjeta.setText(Integer.toString(VOAlta.getTarjeta()));
             jTCodTarjeta.setText(Integer.toString(VOAlta.getCodigoTarjeta()));
@@ -304,7 +304,7 @@ public class CIAltaUsuario extends javax.swing.JFrame {
             java.util.Date utilDate = new java.util.Date();
             java.sql.Date sqlDate = new java.sql.Date(jDate.getDate().getTime());
             java.sql.Date sqlDateT = new java.sql.Date(utilDate.getTime());
-            oVOAlta = new CVOCliente(Long.parseLong(jTxtidCliente.getText()), jTxtNomCliente.getText(),sqlDate,sexo,Integer.parseInt(jTTarjeta.getText()),Integer.parseInt(jTCodTarjeta.getText()),Direccion.getText(),sqlDateT,idki);
+            oVOAlta = new CVOCliente(Long.parseLong(jTxtidCliente.getText()), jTxtNomCliente.getText(),sqlDate,sexo,Integer.parseInt(jTTarjeta.getText()),Integer.parseInt(jTCodTarjeta.getText()),Direccion.getText(),sqlDateT,idki,"Pendiente",200L);
             if(jTxtidCliente.getText().equals("")||jTxtNomCliente.getText().equals("")||Direccion.getText().equals(""))
                 throw new NumberFormatException();
             if (mOp == AGREGAR) {

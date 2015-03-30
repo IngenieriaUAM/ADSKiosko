@@ -183,6 +183,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtFidRenta">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
       <Events>
@@ -202,6 +203,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFnombreCliente">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -209,6 +213,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFidBicicleta">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -216,6 +223,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFidCliente">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -223,6 +233,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFtipoBicicleta">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

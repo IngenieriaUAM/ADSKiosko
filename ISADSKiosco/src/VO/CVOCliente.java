@@ -21,6 +21,8 @@ public class CVOCliente
   private String Direccion="";
   private Date FechaInsc;
   private int idKiosco;
+  private String estadoPago;
+  private Long saldo;
 
  /*
   * Constructor por default
@@ -29,7 +31,7 @@ public class CVOCliente
   {
   }
 
-  public CVOCliente(Long pidCliente,String pNombreCliente,Date pFechaNacimiento,char pSexo,int pTarjeta,int pCodigoTarjeta,String pDireccion,Date pFechaInsc,int pidKiosco ){
+  public CVOCliente(Long pidCliente,String pNombreCliente,Date pFechaNacimiento,char pSexo,int pTarjeta,int pCodigoTarjeta,String pDireccion,Date pFechaInsc,int pidKiosco, String pEstadoPago, Long pSaldo ){
         this.setidCliente(pidCliente);
         this.setNombreCliente(pNombreCliente);
         this.setFechaNacimiento(pFechaNacimiento);
@@ -39,8 +41,43 @@ public class CVOCliente
         this.setDireccion(pDireccion);
         this.setFechaInsc(pFechaInsc);
         this.setidKiosco(pidKiosco);
+        this.setSaldo(pSaldo);
+        this.setEstadoPago(pEstadoPago);
+        
   }
 
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public int getIdKiosco() {
+        return idKiosco;
+    }
+
+    public String getEstadoPago() {
+        return estadoPago;
+    }
+
+    public Long getSaldo() {
+        return saldo;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public void setIdKiosco(int idKiosco) {
+        this.idKiosco = idKiosco;
+    }
+
+    public void setEstadoPago(String estadoPago) {
+        this.estadoPago = estadoPago;
+    }
+
+    public void setSaldo(Long saldo) {
+        this.saldo = saldo;
+    }
+ 
  public void setDireccion(String pSDireccion){
 	this.Direccion = pSDireccion;
   }
