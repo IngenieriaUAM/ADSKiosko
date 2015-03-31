@@ -37,7 +37,7 @@ public class CIAltaUsuario extends javax.swing.JFrame {
         CVOCliente VOAlta;
         initComponents();
         this.setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.jpg")).getIm­age());
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
         java.sql.Date max= new java.sql.Date(Fecha().getTime()+63113800000L);
         java.sql.Date min= new java.sql.Date(Fecha().getTime()-1262276000000L);
         jDate.setSelectableDateRange(min, max);

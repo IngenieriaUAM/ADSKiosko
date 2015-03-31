@@ -46,7 +46,7 @@ public class CIRenta extends javax.swing.JFrame {
         CVORenta VORenta;
         initComponents();
         this.setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.jpg")).getIm­age());
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
         java.sql.Date max= new java.sql.Date(Fech().getTime()+63113800000L);
         java.sql.Date min= new java.sql.Date(Fech().getTime()-1262276000000L);
         //jDateFechaRent.setSelectableDateRange(min,max);

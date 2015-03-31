@@ -20,7 +20,7 @@ public class CIPago extends javax.swing.JFrame {
      */
     public CIPago() {
         initComponents();
-          setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.jpg")).getIm­age());
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
     }
 
     @SuppressWarnings("unchecked")

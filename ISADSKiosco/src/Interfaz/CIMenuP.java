@@ -13,7 +13,7 @@ public class CIMenuP extends javax.swing.JFrame {
     CIMenuP() {
         initComponents();
         this.setLocationRelativeTo(null);
-          setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.jpg")).getIm­age());
+          setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
     }
 
     @SuppressWarnings("unchecked")

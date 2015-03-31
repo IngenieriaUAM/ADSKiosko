@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author neto
@@ -16,6 +18,7 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
      */
     public CIConsultasPorKiosco() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
     }
 
     /**
@@ -30,40 +33,24 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jBRegresar = new javax.swing.JButton();
         jBConsultar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Consultas: rentas por Kiosco");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 42, 385, 207));
 
+        jBRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         jBRegresar.setText("Regresar");
+        getContentPane().add(jBRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 140, -1));
 
+        jBConsultar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         jBConsultar.setText("Consultar");
+        getContentPane().add(jBConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jBRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(jBConsultar)
-                .addGap(88, 88, 88))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBRegresar)
-                    .addComponent(jBConsultar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -76,6 +63,7 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBConsultar;
     private javax.swing.JButton jBRegresar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
