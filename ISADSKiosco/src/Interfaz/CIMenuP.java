@@ -46,118 +46,81 @@ public class CIMenuP extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
 
-        btnGestion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestion.jpg"))); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnGestion.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnGestion.setText("Gestión de clientes");
         btnGestion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGestion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestion.jpg"))); // NOI18N
         btnGestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGestionActionPerformed(evt);
             }
         });
+        jPanel1.add(btnGestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 320, 80));
 
-        btnDev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Devolucion.jpg"))); // NOI18N
+        btnDev.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnDev.setText("Devolución de Bicicletas");
         btnDev.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDevActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 320, 80));
 
-        btnReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reportes.jpg"))); // NOI18N
+        btnReportes.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnReportes.setText("Reportes");
         btnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportesActionPerformed(evt);
             }
         });
+        jPanel1.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 310, 80));
 
-        btnRenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/renta.jpg"))); // NOI18N
+        btnRenta.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnRenta.setText("Renta de Bicicletas");
         btnRenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRentaActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, 320, 80));
 
-        btnPago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pago.jpg"))); // NOI18N
+        btnPago.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnPago.setText("Pagos");
         btnPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPagoActionPerformed(evt);
             }
         });
+        jPanel1.add(btnPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 310, 80));
 
-        btnConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/consultas.jpg"))); // NOI18N
+        btnConsultas.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnConsultas.setText("Consultas");
         btnConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConsultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultasActionPerformed(evt);
             }
         });
+        jPanel1.add(btnConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 320, 70));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.jpg"))); // NOI18N
+        btnSalir.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnSalir.setText("Salir");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, 110, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/kioscomenu1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(btnGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(btnDev, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(420, 420, 420)
-                .addComponent(btnConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(420, 420, 420)
-                .addComponent(btnPago, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(420, 420, 420)
-                .addComponent(btnRenta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(btnGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(btnDev, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(btnConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(btnPago, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(btnRenta, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(490, 490, 490)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 590));
 
         jMenu1.setText("Operaciones");
 
