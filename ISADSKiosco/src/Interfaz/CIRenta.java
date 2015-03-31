@@ -76,6 +76,8 @@ public class CIRenta extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jBtnRealizar = new javax.swing.JButton();
         jBtnCancelar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("RENTA");
@@ -107,6 +109,7 @@ public class CIRenta extends javax.swing.JFrame {
             }
         });
 
+        jTxtNomCliente.setFocusable(false);
         jTxtNomCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTxtNomClienteKeyTyped(evt);
@@ -114,6 +117,12 @@ public class CIRenta extends javax.swing.JFrame {
         });
 
         jLTarjeta.setText("CvBicicleta:");
+
+        jTxtIdBicicleta.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTxtIdBicicletaFocusLost(evt);
+            }
+        });
 
         jBtnRealizar.setText("Realizar");
         jBtnRealizar.addActionListener(new java.awt.event.ActionListener() {
@@ -129,35 +138,52 @@ public class CIRenta extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Tipo de bicicleta");
+
+        jTextField1.setEditable(false);
+        jTextField1.setFocusable(false);
+
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .add(23, 23, 23)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(3, 3, 3)
-                        .add(jLTarjeta)
-                        .add(39, 39, 39)
+                        .add(135, 135, 135)
+                        .add(jBtnRealizar)
+                        .add(64, 64, 64)
+                        .add(jBtnCancelar)
+                        .add(89, 89, 89)
+                        .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel1Layout.createSequentialGroup()
-                                .add(jBtnRealizar)
-                                .add(64, 64, 64)
-                                .add(jBtnCancelar))
-                            .add(jTxtIdBicicleta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(jLabel1)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jTxtIdCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .add(jLabel2)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jTxtNomCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 286, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jLabel2)
-                            .add(jLabel1))
-                        .add(45, 45, 45)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jTxtNomCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 286, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTxtIdCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .add(jLTarjeta)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTxtIdBicicleta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel3)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(new java.awt.Component[] {jLTarjeta, jLabel1, jLabel2, jLabel3}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
+
+        jPanel1Layout.linkSize(new java.awt.Component[] {jTextField1, jTxtIdBicicleta, jTxtIdCliente, jTxtNomCliente}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
@@ -165,24 +191,30 @@ public class CIRenta extends javax.swing.JFrame {
                 .add(jLabel6)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                .addContainerGap()
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel1)
                     .add(jTxtIdCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                .add(18, 18, 18)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel2)
                     .add(jTxtNomCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(50, 50, 50)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLTarjeta)
                     .add(jTxtIdBicicleta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel3)
+                    .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 43, Short.MAX_VALUE)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jBtnRealizar)
                     .add(jBtnCancelar))
                 .add(21, 21, 21))
         );
+
+        jPanel1Layout.linkSize(new java.awt.Component[] {jLTarjeta, jLabel1, jLabel2, jLabel3}, org.jdesktop.layout.GroupLayout.VERTICAL);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,7 +222,7 @@ public class CIRenta extends javax.swing.JFrame {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 429, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -288,16 +320,32 @@ public class CIRenta extends javax.swing.JFrame {
     }//GEN-LAST:event_jTxtNomClienteKeyTyped
 
     private void jTxtIdClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTxtIdClienteFocusLost
+        
         CNAlta oNAlta = new CNAlta();
         CVOCliente oVCliente = new CVOCliente();
         try {
             oVCliente = oNAlta.buscaCliente(Long.parseLong(jTxtIdCliente.getText()));
             jTxtNomCliente.setText(oVCliente.getNombreCliente());
+            
         } catch (SQLException ex) {
             Logger.getLogger(CIRenta.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(this, "No existe el cliente","Error",JOptionPane.ERROR_MESSAGE);
         }
-        
     }//GEN-LAST:event_jTxtIdClienteFocusLost
+
+    private void jTxtIdBicicletaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTxtIdBicicletaFocusLost
+        CNBicicleta oNBicicleta= new CNBicicleta();
+        CVOBicicleta oVBicicleta = new CVOBicicleta();
+        try {
+            oVBicicleta = oNBicicleta.buscaBicicleta(Long.parseLong(jTxtIdBicicleta.getText()));
+            jTextField1.setText(oVBicicleta.getTipoBicicleta());
+        } catch (SQLException ex) {
+            Logger.getLogger(CIRenta.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(this, "No existe la bicicleta","Error",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jTxtIdBicicletaFocusLost
 
     public final Date Fech(){
       java.util.Date Date=new java.util.Date();
@@ -348,8 +396,10 @@ public class CIRenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLTarjeta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTxtIdBicicleta;
     private javax.swing.JTextField jTxtIdCliente;
     private javax.swing.JTextField jTxtNomCliente;

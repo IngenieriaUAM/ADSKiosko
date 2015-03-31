@@ -102,7 +102,7 @@ public class CDPago {
         catch (SQLException e) {
             System.out.println(e.getErrorCode());
             if (e.getErrorCode() == 0 )
-                JOptionPane.showMessageDialog(null, "Se ha agregado el pago correctamente");
+                JOptionPane.showMessageDialog(null, "Se agrego correctamente El pago","Pago",JOptionPane.INFORMATION_MESSAGE);
             if (e.getErrorCode() == 1062)
                 throw new SQLException("Id Repedido");
             if (this.mConexion == null) {

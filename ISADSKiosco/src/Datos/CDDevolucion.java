@@ -62,7 +62,7 @@ public class CDDevolucion {
         catch (SQLException e) {
             System.out.println(e.getErrorCode()+" "+e.getMessage());
             if(e.getErrorCode()==0)
-                JOptionPane.showMessageDialog(null, "Se registró correctamente la devolucion", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Se agrego correctamente la devolucion","Devolucion",JOptionPane.INFORMATION_MESSAGE);
             if (e.getErrorCode() == 1062)
                 throw new SQLException("Matricula Repedida");
             if (this.mConexion == null) {

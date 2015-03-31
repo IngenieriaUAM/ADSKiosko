@@ -113,7 +113,7 @@ public class CDReporte {
         catch (SQLException e) {
             System.out.println(e.getErrorCode()+" "+e.getMessage());
             if (e.getErrorCode() == 0)
-                JOptionPane.showMessageDialog(null, "El Reporte se agregó correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+                 JOptionPane.showMessageDialog(null, "Se agrego correctamente la devolucion","Devolucion",JOptionPane.INFORMATION_MESSAGE);
             if (e.getErrorCode() == 1062)
                 throw new SQLException("ID Repedido");
             if (this.mConexion == null) {

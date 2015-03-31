@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import VO.CVORenta;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,6 +55,8 @@ public class CDRenta {
 	} 
         catch (SQLException e) {
             System.out.println(e.getErrorCode()+""+e.getMessage());
+            if(e.getErrorCode()==0)
+                 JOptionPane.showMessageDialog(null, "Se agrego correctamente la renta","Renta",JOptionPane.INFORMATION_MESSAGE);
             if (e.getErrorCode() == 1062)
                 throw new SQLException("ID Repetido");
             if (this.mConexion == null) {
