@@ -6,6 +6,7 @@ import VO.CVOPago;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,7 @@ public class CIPago extends javax.swing.JFrame {
      */
     public CIPago() {
         initComponents();
+          setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.jpg")).getIm­age());
     }
 
     @SuppressWarnings("unchecked")
