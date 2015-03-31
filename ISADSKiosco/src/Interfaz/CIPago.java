@@ -39,124 +39,87 @@ public class CIPago extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnPagar = new javax.swing.JButton();
         btnregresar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lbnombreCliente.setText("Nombredel cliente:");
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbnombreCliente.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbnombreCliente.setText("Nombre del cliente:");
+        jPanel2.add(lbnombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         txtFnombreCliente.setEditable(false);
+        jPanel2.add(txtFnombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 200, 30));
 
-        lbMensualidad.setText("Mensualidad");
+        lbMensualidad.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbMensualidad.setText("Mensualidad:");
+        jPanel2.add(lbMensualidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
 
-        lbMultas.setText("Multas");
+        lbMultas.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbMultas.setText("Multas:");
+        jPanel2.add(lbMultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 90, -1));
 
         txtFmensualidad.setEditable(false);
+        jPanel2.add(txtFmensualidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 91, 30));
 
         txtFmultas.setEditable(false);
+        txtFmultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFmultasActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtFmultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 90, 30));
 
+        lbTotal.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         lbTotal.setText("Total          $");
+        jPanel2.add(lbTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, 20));
 
         txtFtotal.setEditable(false);
+        jPanel2.add(txtFtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 90, 30));
 
+        lbidCliente.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         lbidCliente.setText("ID de Cliente: ");
+        jPanel2.add(lbidCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, -1));
 
+        txtFidCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFidClienteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtFidCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 57, 30));
+
+        btnBuscar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
+        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
 
+        btnPagar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         btnPagar.setText("Pagar");
         btnPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPagarActionPerformed(evt);
             }
         });
+        jPanel2.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
+        btnregresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         btnregresar.setText("Regresar");
         btnregresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnregresarActionPerformed(evt);
             }
         });
+        jPanel2.add(btnregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnregresar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnPagar))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbnombreCliente)
-                            .addComponent(lbidCliente))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtFidCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnBuscar))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtFnombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(lbMensualidad)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtFmensualidad, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(lbMultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lbTotal))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtFmultas)
-                                            .addComponent(txtFtotal))))))))
-                .addContainerGap())
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lbMensualidad, lbMultas});
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lbidCliente, lbnombreCliente});
-
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbidCliente)
-                    .addComponent(txtFidCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbnombreCliente)
-                    .addComponent(txtFnombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbMensualidad)
-                    .addComponent(txtFmensualidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbMultas)
-                    .addComponent(txtFmultas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtFtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbTotal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPagar)
-                    .addComponent(btnregresar))
-                .addContainerGap())
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lbMensualidad, lbMultas});
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 360));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -209,12 +172,21 @@ public class CIPago extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPagarActionPerformed
 
+    private void txtFidClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFidClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFidClienteActionPerformed
+
+    private void txtFmultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFmultasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFmultasActionPerformed
+
   
     private CtblACobro tblMCobro = new CtblACobro();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnPagar;
     private javax.swing.JButton btnregresar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbMensualidad;
     private javax.swing.JLabel lbMultas;
