@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Datos;
 
 import java.util.ArrayList;
@@ -14,10 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-/**
- *
- * @author J o C e L y N
- */
+
 public class CDPago {
     private Connection   mConexion = null;
     private CDDAOFactory mDAOFactory = null;
@@ -27,9 +19,7 @@ public class CDPago {
     public CDPago() {
         mDAOFactory=new CDDAOFactory();
     }
-    
-    
-    
+
     public ArrayList<CVOPago> getListaPago()throws SQLException {
         String     lSQuery = "SELECT * FROM Pago";
         ArrayList<CVOPago> lALListaPago = new ArrayList<CVOPago>();
@@ -46,7 +36,6 @@ public class CDPago {
              * por lo que hay que recorrerlo al primer registro, y si no existe ninguno
              * el resultset regresa falso.
              */
-
             while(mResultSet.next()) {
                 //Con rs.getXXXX podemos obtener datos del ResultSet, de tipo int, float, etc.
                 CVOPago lVOPago = new CVOPago(mResultSet.getLong(1), mResultSet.getLong(2) ,mResultSet.getLong(3),mResultSet.getString(4));
@@ -82,8 +71,6 @@ public class CDPago {
 
     public void setAgregaPago(CVOPago pVOPago) throws SQLException {
         try {
-            //String con la instrucción SQL
-            
 	    String lSQuery = "INSERT INTO Pago (monto, idCliente, nombreCliente,fechaPago) " +
                         "VALUES( " + "'" + pVOPago.getMonto() + "', " +
 		                     "'" + pVOPago.getIdCliente() + "', " +
@@ -123,8 +110,7 @@ public class CDPago {
             catch (SQLException e) {
                 e.printStackTrace();
             }
-	}
-        
+	}   
     }
     
     public CVOPago buscaPago(Long pidCliente) throws SQLException{
@@ -166,7 +152,6 @@ public class CDPago {
                     this.mConexion.close();
                 }
             } catch (SQLException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

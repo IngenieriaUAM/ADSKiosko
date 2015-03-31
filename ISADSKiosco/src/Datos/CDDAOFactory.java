@@ -1,25 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Datos;
-
-/**
- *
- * @author lucas
- */
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
-/**
- * 
- *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
- */
 public class CDDAOFactory{
   //Atributos
   private String     url = "jdbc:mysql://localhost/BDBicicletas?";
@@ -27,24 +11,16 @@ public class CDDAOFactory{
   private String     password = "";
   private Connection conexion;
 
-  /**
-   * Cosntructor por default
-   *
-   */
-
   public CDDAOFactory()  {
       try {
             loadDriver();
 	  } 
       catch (ClassNotFoundException e) {
-          // TODO Auto-generated catch block
           e.printStackTrace();
       }
   }
 
-  /**
-  * Carga el driver de la conexiÛn a la base de datos
-  */
+  /*Carga el driver de la conexiÛn a la base de datos*/
   private void loadDriver() throws ClassNotFoundException{
       try{
             //Instancia de una nueva clase para el puente "sun.jdbc.odbc.JdbcOdbcDriver"
@@ -55,10 +31,7 @@ public class CDDAOFactory{
       }
   }
 
- /**
-  * Obtiene una conexiÛn con el nombre del driver especificado
-  * @return
-  */
+ /*Obtiene una conexiÛn con el nombre del driver especificado*/
   public Connection abreConexion() throws SQLException {
       //este es el nombre del driver que se d· en:
       // "Panel de control->OrÌgenes de datos (ODBC)" Û

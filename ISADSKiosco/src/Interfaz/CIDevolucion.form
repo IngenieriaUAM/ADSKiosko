@@ -141,12 +141,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="idBicicleta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ID BICICLETA:"/>
+        <Property name="text" type="java.lang.String" value="ID Bicicleta:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="buscar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="BUSCAR"/>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarActionPerformed"/>
@@ -178,7 +178,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Id Renta"/>
+        <Property name="text" type="java.lang.String" value="Id Renta:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFidRenta">
@@ -192,14 +192,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Id Cliente"/>
+        <Property name="text" type="java.lang.String" value="Id Cliente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFmulta">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre"/>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFnombreCliente">
@@ -209,7 +209,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Id Bicicleta"/>
+        <Property name="text" type="java.lang.String" value="Id Bicicleta:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFidBicicleta">
@@ -219,7 +219,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Multa"/>
+        <Property name="text" type="java.lang.String" value="Multa:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFidCliente">
@@ -229,7 +229,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tipo"/>
+        <Property name="text" type="java.lang.String" value="Tipo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFtipoBicicleta">
