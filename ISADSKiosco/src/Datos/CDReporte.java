@@ -90,9 +90,8 @@ public class CDReporte {
         try {
             //String con la instrucción SQL
             System.out.println("inserta reporte");
-	    String lSQuery = "INSERT INTO Reportes ( idReporte, tipoReporte, idBicicleta, tipoBicicleta, idCliente, nombreCliente, descripcion, fecha,idRenta) " +
-                        "VALUES( " + "'" + pVOReporte.getIdReporte() + "', " +
-		                     "'" + pVOReporte.getTipoReporte() + "', " +
+	    String lSQuery = "INSERT INTO Reportes (tipoReporte, idBicicleta, tipoBicicleta, idCliente, nombreCliente, descripcion, fecha,idRenta) " +
+                        "VALUES( " + "'" + pVOReporte.getTipoReporte() + "', " +
 		                     "'" + pVOReporte.getIdBicicleta() + "'," +
                                      "'" + pVOReporte.getTipoBicicleta()+ "'," +
                                      "'" + pVOReporte.getIdCliente()+ "'," +
@@ -113,7 +112,7 @@ public class CDReporte {
         catch (SQLException e) {
             System.out.println(e.getErrorCode()+" "+e.getMessage());
             if (e.getErrorCode() == 0)
-                 JOptionPane.showMessageDialog(null, "Se agrego correctamente la devolucion","Devolucion",JOptionPane.INFORMATION_MESSAGE);
+                 JOptionPane.showMessageDialog(null, "Se agrego correctamente el reporte","Reporte",JOptionPane.INFORMATION_MESSAGE);
             if (e.getErrorCode() == 1062)
                 throw new SQLException("ID Repedido");
             if (this.mConexion == null) {
