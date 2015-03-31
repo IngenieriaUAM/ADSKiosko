@@ -223,5 +223,4 @@ public class CIinicioSesion extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPFContrasena;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTFUsuario;
-
 }
