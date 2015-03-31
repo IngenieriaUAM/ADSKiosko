@@ -86,8 +86,8 @@ public class CDRenta {
      * @return
      * @throws SQLException
      */
-    public CVORenta buscaRenta(Long idRenta) throws SQLException {
-        String     lSQuery = "SELECT * FROM Renta WHERE idBicicleta = '"+idRenta+"'";
+    public CVORenta buscaRenta(Long idBicicleta) throws SQLException {
+        String     lSQuery = "SELECT * FROM Renta WHERE idBicicleta = '"+idBicicleta+"' and statRenta = 'Activa' ";
         System.out.println(lSQuery);
         try {
             //Obtiene una conexión con la base de datos

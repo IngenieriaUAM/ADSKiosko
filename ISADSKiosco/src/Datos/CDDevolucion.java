@@ -47,7 +47,7 @@ public class CDDevolucion {
                                      "'" + pVODevolucion.getIdBicicleta()+ "'," +
                                      "'" + pVODevolucion.getNombreCliente()+ "'," +
                                      "" + pVODevolucion.getFechainicio()+ "," +
-                                     "" + pVODevolucion.getFechadevolucion()+ "," +
+                                     "now()," +
                                      "'" + pVODevolucion.getMulta()+ "');";
             System.out.println(lSQuery); //para efectos de depuracion
             //Obtiene una conexiÛn con la base de datos

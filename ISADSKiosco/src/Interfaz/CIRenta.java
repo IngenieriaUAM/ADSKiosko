@@ -123,6 +123,11 @@ public class CIRenta extends javax.swing.JFrame {
                 jTxtIdBicicletaFocusLost(evt);
             }
         });
+        jTxtIdBicicleta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTxtIdBicicletaKeyTyped(evt);
+            }
+        });
 
         jBtnRealizar.setText("Realizar");
         jBtnRealizar.addActionListener(new java.awt.event.ActionListener() {
@@ -242,13 +247,11 @@ public class CIRenta extends javax.swing.JFrame {
 */
     private void jBtnRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRealizarActionPerformed
         // TODO add your handling code here:
-        
         CNRenta oNRenta;
         CVORenta oVORenta;
         CNBicicleta oNBicicleta = new CNBicicleta();
         CVOBicicleta oVBicicleta = new CVOBicicleta();
         oNRenta= new CNRenta();
-
         try {
             oVORenta = new CVORenta(0L,"now()","",Long.parseLong(jTxtIdCliente.getText()),Long.parseLong(jTxtIdBicicleta.getText()),"Rent",1L);
             oVBicicleta = oNBicicleta.buscaBicicleta(oVORenta.getIdBicicleta());
@@ -257,6 +260,8 @@ public class CIRenta extends javax.swing.JFrame {
             if(!oVBicicleta.getStatBicicleta().equals("Disponible"))
                 throw new Error();
             oNRenta.setAgregaRenta(oVORenta);
+            new CIMenuP().setVisible(true);
+            dispose();
         }
         catch(NullPointerException e){
             JOptionPane.showMessageDialog(this,"Error de fecha, el formado debe ser dd/mm/aaaa","Error en Datos", JOptionPane.ERROR_MESSAGE); 
@@ -285,10 +290,7 @@ public class CIRenta extends javax.swing.JFrame {
         try{
             if(!Character.isDigit(evt.getKeyChar())&&!Character.isISOControl(evt.getKeyChar())){
                 evt.consume();
-                throw new Exception("La matricula es numerica");}
-            if(jTxtIdCliente.getText().length()>=10){
-                evt.consume();
-                throw new Exception("La matricula es de 10 digitos");
+                throw new Exception("El Identificador es numerico");
         }
         }
         catch(Exception E){
@@ -331,6 +333,8 @@ public class CIRenta extends javax.swing.JFrame {
             Logger.getLogger(CIRenta.class.getName()).log(Level.SEVERE, null, ex);
         } catch(NullPointerException npe){
             JOptionPane.showMessageDialog(this, "No existe el cliente","Error",JOptionPane.ERROR_MESSAGE);
+        } catch(NumberFormatException nfe){
+            
         }
     }//GEN-LAST:event_jTxtIdClienteFocusLost
 
@@ -344,8 +348,14 @@ public class CIRenta extends javax.swing.JFrame {
             Logger.getLogger(CIRenta.class.getName()).log(Level.SEVERE, null, ex);
         } catch(NullPointerException npe){
             JOptionPane.showMessageDialog(this, "No existe la bicicleta","Error",JOptionPane.ERROR_MESSAGE);
+        } catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(this, "Erro de identificador","Error",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jTxtIdBicicletaFocusLost
+
+    private void jTxtIdBicicletaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtIdBicicletaKeyTyped
+        
+    }//GEN-LAST:event_jTxtIdBicicletaKeyTyped
 
     public final Date Fech(){
       java.util.Date Date=new java.util.Date();

@@ -222,6 +222,7 @@ public class CIDevolucion extends javax.swing.JFrame {
             oVBicicleta = oNBicicleta.buscaBicicleta(Long.parseLong(id.getText()));
             System.out.println(oVBicicleta.getIdBicicleta());
             oVRenta = oNRenta.buscaRenta(oVBicicleta.getIdBicicleta());
+            System.out.println(oVBicicleta.getStatBicicleta().equals("Rentada"));
             if(!oVBicicleta.getStatBicicleta().equals("Rentada"))
                 throw new Error();
             oVCliente = oNAlta.buscaCliente(oVRenta.getIdCliente());
@@ -247,6 +248,8 @@ public class CIDevolucion extends javax.swing.JFrame {
         CNDevolucion oNDevolucion = new CNDevolucion();
         try {
             oNDevolucion.setAgregaDevolucion(oVDevolucion);
+            new CIMenuP().setVisible(true);
+            dispose();
         } catch (SQLException ex) {
             Logger.getLogger(CIDevolucion.class.getName()).log(Level.SEVERE, null, ex);
         }
