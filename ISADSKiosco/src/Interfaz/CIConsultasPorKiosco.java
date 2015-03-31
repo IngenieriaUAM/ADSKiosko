@@ -37,14 +37,19 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Consultas: rentas por Kiosco");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 42, 385, 207));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 385, 207));
 
+        jBRegresar.setBackground(new java.awt.Color(0, 0, 0));
         jBRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jBRegresar.setForeground(new java.awt.Color(255, 255, 255));
         jBRegresar.setText("Regresar");
         getContentPane().add(jBRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 140, -1));
 
+        jBConsultar.setBackground(new java.awt.Color(0, 0, 0));
         jBConsultar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jBConsultar.setForeground(new java.awt.Color(255, 255, 255));
         jBConsultar.setText("Consultar");
         getContentPane().add(jBConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
 

@@ -92,7 +92,9 @@ public class CIPago extends javax.swing.JFrame {
         });
         jPanel2.add(txtFidCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 57, 30));
 
+        btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
         btnBuscar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +103,9 @@ public class CIPago extends javax.swing.JFrame {
         });
         jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
 
+        btnPagar.setBackground(new java.awt.Color(0, 0, 0));
         btnPagar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnPagar.setForeground(new java.awt.Color(255, 255, 255));
         btnPagar.setText("Pagar");
         btnPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +114,9 @@ public class CIPago extends javax.swing.JFrame {
         });
         jPanel2.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
+        btnregresar.setBackground(new java.awt.Color(0, 0, 0));
         btnregresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnregresar.setForeground(new java.awt.Color(255, 255, 255));
         btnregresar.setText("Regresar");
         btnregresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -63,6 +63,7 @@ public class CIReportes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Reporte");
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -89,7 +90,9 @@ public class CIReportes extends javax.swing.JFrame {
         });
         jPanel1.add(txtFidRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 50, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Aceptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +165,9 @@ public class CIReportes extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 49, -1, -1));
 
+        btnGuardar.setBackground(new java.awt.Color(0, 0, 0));
         btnGuardar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +176,9 @@ public class CIReportes extends javax.swing.JFrame {
         });
         jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 130, -1));
 
+        btnCancelar.setBackground(new java.awt.Color(0, 0, 0));
         btnCancelar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setText("Limpiar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +187,9 @@ public class CIReportes extends javax.swing.JFrame {
         });
         jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 120, -1));
 
+        btnImprimir.setBackground(new java.awt.Color(0, 0, 0));
         btnImprimir.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnImprimir.setForeground(new java.awt.Color(255, 255, 255));
         btnImprimir.setText("Imprimir");
         btnImprimir.setEnabled(false);
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +199,9 @@ public class CIReportes extends javax.swing.JFrame {
         });
         jPanel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 130, -1));
 
+        btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

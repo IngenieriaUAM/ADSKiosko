@@ -55,6 +55,8 @@ public class CIDevolucion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusTraversalPolicyProvider(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 99, 30));
 
@@ -62,7 +64,9 @@ public class CIDevolucion extends javax.swing.JFrame {
         idBicicleta.setText("IDBicicleta:");
         getContentPane().add(idBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 24, -1, -1));
 
+        buscar.setBackground(new java.awt.Color(0, 0, 0));
         buscar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        buscar.setForeground(new java.awt.Color(255, 255, 255));
         buscar.setText("Buscar");
         buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +75,9 @@ public class CIDevolucion extends javax.swing.JFrame {
         });
         getContentPane().add(buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
+        registrar.setBackground(new java.awt.Color(0, 0, 0));
         registrar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        registrar.setForeground(new java.awt.Color(255, 255, 255));
         registrar.setText("Registrar Devolucion");
         registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +86,9 @@ public class CIDevolucion extends javax.swing.JFrame {
         });
         getContentPane().add(registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
+        imprimir.setBackground(new java.awt.Color(0, 0, 0));
         imprimir.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        imprimir.setForeground(new java.awt.Color(255, 255, 255));
         imprimir.setText("Imprimir Ticket");
         imprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +97,9 @@ public class CIDevolucion extends javax.swing.JFrame {
         });
         getContentPane().add(imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, -1, -1));
 
+        regresar.setBackground(new java.awt.Color(0, 0, 0));
         regresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        regresar.setForeground(new java.awt.Color(255, 255, 255));
         regresar.setText("Regresar");
         regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +160,9 @@ public class CIDevolucion extends javax.swing.JFrame {
         txtFtipoBicicleta.setEditable(false);
         getContentPane().add(txtFtipoBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 159, 30));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 360));

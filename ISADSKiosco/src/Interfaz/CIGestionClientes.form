@@ -37,7 +37,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="43" width="-1" height="197"/>
+          <AbsoluteConstraints x="32" y="43" width="540" height="197"/>
         </Constraint>
       </Constraints>
 
@@ -60,7 +60,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="2" y="0" width="570" height="197"/>
+              <AbsoluteConstraints x="2" y="0" width="540" height="197"/>
             </Constraint>
           </Constraints>
 
@@ -91,7 +91,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="570" height="200"/>
+              <AbsoluteConstraints x="70" y="0" width="500" height="200"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -99,8 +99,14 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnAgregar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Franklin Gothic Demi" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
@@ -115,8 +121,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnModificar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Franklin Gothic Demi" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
@@ -131,8 +143,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRegresar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Franklin Gothic Demi" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Regresar"/>
       </Properties>
@@ -147,8 +165,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEliminar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Franklin Gothic Demi" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>

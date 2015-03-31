@@ -145,7 +145,9 @@ public class CIRenta extends javax.swing.JFrame {
         jPanel1.add(jTxtIdBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 286, 30));
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 75, 110, -1));
 
+        jBtnRealizar.setBackground(new java.awt.Color(0, 0, 0));
         jBtnRealizar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jBtnRealizar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnRealizar.setText("Realizar");
         jBtnRealizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +156,9 @@ public class CIRenta extends javax.swing.JFrame {
         });
         jPanel1.add(jBtnRealizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
 
+        jBtnCancelar.setBackground(new java.awt.Color(0, 0, 0));
         jBtnCancelar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jBtnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnCancelar.setText("Regresar");
         jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -43,6 +43,7 @@ public class CIConsultas extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Consulta de rentas por Kiosco");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +53,7 @@ public class CIConsultas extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 390, -1));
 
         jButton2.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Consulta de rentas por dia");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +63,7 @@ public class CIConsultas extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 390, -1));
 
         jButton3.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Consulta de uso de membresia");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

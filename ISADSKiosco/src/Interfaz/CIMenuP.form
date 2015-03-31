@@ -86,6 +86,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="MENU"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -294,7 +295,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="140" y="450" width="110" height="40"/>
+              <AbsoluteConstraints x="310" y="460" width="110" height="40"/>
             </Constraint>
           </Constraints>
         </Component>

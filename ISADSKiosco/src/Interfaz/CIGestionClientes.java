@@ -52,14 +52,16 @@ public class CIGestionClientes extends javax.swing.JFrame {
         initTableModelAlumno();
         spAlumnos.setViewportView(tblVCliente);
 
-        jPanel1.add(spAlumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 570, 197));
+        jPanel1.add(spAlumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 540, 197));
 
         jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 200));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 500, 200));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, -1, 197));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 43, 540, 197));
 
+        btnAgregar.setBackground(new java.awt.Color(0, 0, 0));
         btnAgregar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +70,9 @@ public class CIGestionClientes extends javax.swing.JFrame {
         });
         getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 150, -1));
 
+        btnModificar.setBackground(new java.awt.Color(0, 0, 0));
         btnModificar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +81,9 @@ public class CIGestionClientes extends javax.swing.JFrame {
         });
         getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 150, -1));
 
+        btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +92,9 @@ public class CIGestionClientes extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 150, -1));
 
+        btnEliminar.setBackground(new java.awt.Color(0, 0, 0));
         btnEliminar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

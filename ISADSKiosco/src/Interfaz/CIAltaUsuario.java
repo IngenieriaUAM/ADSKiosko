@@ -229,8 +229,9 @@ public class CIAltaUsuario extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jBtnRealizar.setBackground(new java.awt.Color(255, 255, 255));
+        jBtnRealizar.setBackground(new java.awt.Color(0, 0, 0));
         jBtnRealizar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jBtnRealizar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnRealizar.setText("Agregar");
         jBtnRealizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +240,9 @@ public class CIAltaUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnRealizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, -1, -1));
 
+        jBtnRegresar.setBackground(new java.awt.Color(0, 0, 0));
         jBtnRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        jBtnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         jBtnRegresar.setText("Regresar");
         jBtnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
