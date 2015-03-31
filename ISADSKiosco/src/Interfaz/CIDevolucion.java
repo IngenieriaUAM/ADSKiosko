@@ -239,6 +239,8 @@ public class CIDevolucion extends javax.swing.JFrame {
             oVBicicleta = oNBicicleta.buscaBicicleta(Long.parseLong(id.getText()));
             System.out.println(oVBicicleta.getIdBicicleta());
             oVRenta = oNRenta.buscaRenta(oVBicicleta.getIdBicicleta());
+            if(!oVBicicleta.getStatBicicleta().equals("Rentada"))
+                throw new Error();
             oVCliente = oNAlta.buscaCliente(oVRenta.getIdCliente());
             txtFidRenta.setText(""+oVRenta.getIdRenta());
             txtFidBicicleta.setText(oVBicicleta.getIdBicicleta()+"");
@@ -270,6 +272,9 @@ public class CIDevolucion extends javax.swing.JFrame {
         } catch(NullPointerException npe){
             id.setText("");
             JOptionPane.showMessageDialog(this, "Bicicleta no rentada", "Error", JOptionPane.ERROR_MESSAGE);
+        }catch (Error e){
+            id.setText("");
+            JOptionPane.showMessageDialog(this, "Ya se registro esa renta", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_buscarActionPerformed
 

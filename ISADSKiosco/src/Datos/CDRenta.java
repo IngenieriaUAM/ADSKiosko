@@ -41,7 +41,7 @@ public class CDRenta {
                         "VALUES( " + "'" + pVORenta.getIdCliente()+ "'," +
                                      "now()," +
                                      "'" + pVORenta.getIdBicicleta()+ "'," +
-                                     "'" + pVORenta.getStatRenta()+ "'," +
+                                     "'Activa'," +
                                      "'" + pVORenta.getIdKiosco()+"');";
             System.out.println(lSQuery+ "clase CDRenta"); //para efectos de depuracion
             //Obtiene una conexiÛn con la base de datos
