@@ -48,7 +48,9 @@ public class CIMenuP extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnGestion.setBackground(new java.awt.Color(0, 0, 0));
         btnGestion.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnGestion.setForeground(new java.awt.Color(255, 255, 255));
         btnGestion.setText("Gestión de clientes");
         btnGestion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestion.addActionListener(new java.awt.event.ActionListener() {
@@ -58,7 +60,9 @@ public class CIMenuP extends javax.swing.JFrame {
         });
         jPanel1.add(btnGestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 320, 80));
 
+        btnDev.setBackground(new java.awt.Color(0, 0, 0));
         btnDev.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnDev.setForeground(new java.awt.Color(255, 255, 255));
         btnDev.setText("Devolución de Bicicletas");
         btnDev.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDev.addActionListener(new java.awt.event.ActionListener() {
@@ -66,9 +70,11 @@ public class CIMenuP extends javax.swing.JFrame {
                 btnDevActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 320, 80));
+        jPanel1.add(btnDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 320, 80));
 
+        btnReportes.setBackground(new java.awt.Color(0, 0, 0));
         btnReportes.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnReportes.setForeground(new java.awt.Color(255, 255, 255));
         btnReportes.setText("Reportes");
         btnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReportes.addActionListener(new java.awt.event.ActionListener() {
@@ -76,9 +82,11 @@ public class CIMenuP extends javax.swing.JFrame {
                 btnReportesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 310, 80));
+        jPanel1.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 310, 80));
 
+        btnRenta.setBackground(new java.awt.Color(0, 0, 0));
         btnRenta.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnRenta.setForeground(new java.awt.Color(255, 255, 255));
         btnRenta.setText("Renta de Bicicletas");
         btnRenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRenta.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +96,9 @@ public class CIMenuP extends javax.swing.JFrame {
         });
         jPanel1.add(btnRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, 320, 80));
 
+        btnPago.setBackground(new java.awt.Color(0, 0, 0));
         btnPago.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnPago.setForeground(new java.awt.Color(255, 255, 255));
         btnPago.setText("Pagos");
         btnPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPago.addActionListener(new java.awt.event.ActionListener() {
@@ -96,9 +106,11 @@ public class CIMenuP extends javax.swing.JFrame {
                 btnPagoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 310, 80));
+        jPanel1.add(btnPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 310, 80));
 
+        btnConsultas.setBackground(new java.awt.Color(0, 0, 0));
         btnConsultas.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnConsultas.setForeground(new java.awt.Color(255, 255, 255));
         btnConsultas.setText("Consultas");
         btnConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConsultas.addActionListener(new java.awt.event.ActionListener() {
@@ -106,9 +118,11 @@ public class CIMenuP extends javax.swing.JFrame {
                 btnConsultasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 320, 70));
+        jPanel1.add(btnConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 320, 80));
 
+        btnSalir.setBackground(new java.awt.Color(0, 0, 0));
         btnSalir.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
