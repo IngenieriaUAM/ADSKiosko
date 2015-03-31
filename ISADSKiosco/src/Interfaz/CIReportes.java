@@ -12,6 +12,7 @@ import VO.CVOReporte;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +27,7 @@ public class CIReportes extends javax.swing.JFrame {
     public CIReportes() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.jpg")).getIm­age());
     }
     
     @SuppressWarnings("unchecked")
@@ -51,15 +53,21 @@ public class CIReportes extends javax.swing.JFrame {
         lbDescripcion = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAdescripcion = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         btnImprimir = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Reporte");
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbselecciontipoReporte.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         lbselecciontipoReporte.setText("Tipo de Reporte:");
+        jPanel1.add(lbselecciontipoReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 24, -1, -1));
 
         cbtipoReporte.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"", "Robo", "Extravío", "Accidente" }));
         cbtipoReporte.addActionListener(new java.awt.event.ActionListener() {
@@ -67,202 +75,142 @@ public class CIReportes extends javax.swing.JFrame {
                 cbtipoReporteActionPerformed(evt);
             }
         });
+        jPanel1.add(cbtipoReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 130, -1));
 
+        lbidRenta.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         lbidRenta.setText("Numero de renta: ");
+        jPanel1.add(lbidRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, 40));
 
         txtFidRenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFidRentaActionPerformed(evt);
             }
         });
+        jPanel1.add(txtFidRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 50, -1));
 
+        jButton1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         jButton1.setText("Aceptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 130, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbtiporeporte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(lbtiporeporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 21, 587, 30));
 
-        lbidBicicleta.setText("ID Bicicleta");
+        lbidBicicleta.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbidBicicleta.setText("ID Bicicleta:");
+        jPanel2.add(lbidBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 140, -1));
 
         txtFidBicicleta.setEditable(false);
         txtFidBicicleta.setFocusable(false);
+        jPanel2.add(txtFidBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 80, 30));
 
-        lbidCliente.setText("ID Cliente");
+        lbidCliente.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbidCliente.setText("ID Cliente:");
+        jPanel2.add(lbidCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 120, -1));
 
         txtFidCliente.setEditable(false);
         txtFidCliente.setFocusable(false);
+        txtFidCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFidClienteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtFidCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 80, 30));
 
-        lbtipoBicicleta.setText("Tipo");
+        lbtipoBicicleta.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbtipoBicicleta.setText("Tipo:");
+        jPanel2.add(lbtipoBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 70, -1));
 
         txtFtipoBicicleta.setEditable(false);
         txtFtipoBicicleta.setFocusable(false);
+        jPanel2.add(txtFtipoBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 249, 30));
 
         txtFnombreCliente.setEditable(false);
         txtFnombreCliente.setFocusable(false);
+        txtFnombreCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFnombreClienteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtFnombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 249, 30));
 
-        lbnombreCliente.setText("Nombre");
+        lbnombreCliente.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbnombreCliente.setText("Nombre:");
+        jPanel2.add(lbnombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 100, -1));
 
+        lbDescripcion.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         lbDescripcion.setText("Descripción:");
+        jPanel2.add(lbDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         txtAdescripcion.setColumns(20);
         txtAdescripcion.setRows(5);
         jScrollPane1.setViewportView(txtAdescripcion);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(lbtiporeporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lbidCliente)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFidCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lbidBicicleta)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFidBicicleta)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lbtipoBicicleta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbnombreCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFnombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFtipoBicicleta, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lbDescripcion))
-                .addContainerGap())
-        );
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 510, 140));
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lbidBicicleta, lbidCliente, lbnombreCliente, lbtipoBicicleta});
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-9, -9, 680, 340));
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtFnombreCliente, txtFtipoBicicleta});
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 49, -1, -1));
 
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbtiporeporte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbidBicicleta)
-                    .addComponent(txtFidBicicleta)
-                    .addComponent(lbtipoBicicleta)
-                    .addComponent(txtFtipoBicicleta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbidCliente)
-                    .addComponent(txtFidCliente)
-                    .addComponent(txtFnombreCliente)
-                    .addComponent(lbnombreCliente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbDescripcion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lbidBicicleta, lbidCliente, lbnombreCliente, lbtipoBicicleta});
-
+        btnGuardar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 130, -1));
 
+        btnCancelar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         btnCancelar.setText("Limpiar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 120, -1));
 
+        btnImprimir.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         btnImprimir.setText("Imprimir");
         btnImprimir.setEnabled(false);
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 130, -1));
 
+        btnRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbselecciontipoReporte)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbtipoReporte, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lbidRenta)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFidRenta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnRegresar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnImprimir)
-                        .addGap(11, 11, 11)
-                        .addComponent(btnGuardar)))
-                .addContainerGap())
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelar, btnGuardar, btnImprimir, btnRegresar});
-
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbselecciontipoReporte)
-                    .addComponent(cbtipoReporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbidRenta)
-                    .addComponent(txtFidRenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnCancelar)
-                    .addComponent(btnImprimir)
-                    .addComponent(btnRegresar)))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCancelar, btnGuardar, btnImprimir, btnRegresar});
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
         );
 
         pack();
@@ -336,6 +284,18 @@ public class CIReportes extends javax.swing.JFrame {
         limpiarCampos();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void txtFidClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFidClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFidClienteActionPerformed
+
+    private void txtFnombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFnombreClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFnombreClienteActionPerformed
+
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnImprimirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
@@ -344,6 +304,8 @@ public class CIReportes extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox cbtipoReporte;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
