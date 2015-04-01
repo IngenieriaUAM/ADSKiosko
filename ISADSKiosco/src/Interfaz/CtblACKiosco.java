@@ -1,35 +1,27 @@
 package Interfaz;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-import VO.CVOCPKiosco;
+import VO.CVOCKiosco;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author neto
- */
 /*
- * @author neto
+ * @author Lucas
  *
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class CtblAConsultaPorKiosco extends AbstractTableModel {
+public class CtblACKiosco extends AbstractTableModel {
 
 
     private static final long serialVersionUID = 1L;
     @SuppressWarnings("unchecked")
     ArrayList items = null;
-    String columnNames[] = {"IDKiosco", "Ubicación", "Numero de rentas"};
+    String columnNames[] = {"IDKIOSCO", "UBICACION", "RENTAS"};
 
     /*
      * Constructor por default
      */
-    public CtblAConsultaPorKiosco() {
+    public CtblACKiosco() {
     }
 
     /*
@@ -59,17 +51,17 @@ public class CtblAConsultaPorKiosco extends AbstractTableModel {
     @Override
     public Object getValueAt(int renglon, int columna) {
         Object objetoRetorno = null;
-        CVOCPKiosco l_CVOCPKiosco = (CVOCPKiosco) items.get(renglon);
+        CVOCKiosco l_VOCliente = (CVOCKiosco) items.get(renglon);
 
         switch (columna) {
             case 0:
-                objetoRetorno = l_CVOCPKiosco.getIdKiosko();
+                objetoRetorno = l_VOCliente.getIdKiosco();
                 break;
             case 1:
-                objetoRetorno = l_CVOCPKiosco.getUbicacionKiosko();
+                objetoRetorno = l_VOCliente.getUbicacion();
                 break;
             case 2:
-                objetoRetorno = l_CVOCPKiosco.getIdRenta();
+                objetoRetorno = l_VOCliente.getRenta();
                 break;
         }
         return objetoRetorno;

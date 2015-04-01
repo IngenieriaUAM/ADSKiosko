@@ -1,18 +1,23 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Datos;
 
 import java.util.ArrayList;
-import VO.CVOCPKiosco;
+import VO.CVOCKiosco;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 /**
  *
- * @author neto
+ * @author lucas
  */
-public class CDCPKiosco {
+public class CDCKiosco {
 
     private Connection   mConexion = null;
     private CDDAOFactory mDAOFactory = null;
@@ -24,7 +29,7 @@ public class CDCPKiosco {
      * @return un ArrayList conteniendo los datos
      * @throws SQLException En caso de error SQL
      */
-    public CDCPKiosco() {
+    public CDCKiosco() {
         this.mDAOFactory = new CDDAOFactory();
     }
     
@@ -33,11 +38,9 @@ public class CDCPKiosco {
       * @return un ArrayList conteniendo los datos
       * @throws SQLException En caso de error SQL
       */
-    public ArrayList<CVOCPKiosco> getListaRentasKiosco()throws SQLException {
-        String lSQuery = "SELECT r.idKiosco, k.ubicacion, r.idRenta"+
-                            "FROM Renta r, Kiosco k" +
-                            "WHERE r.idKiosco = k.idKiosco;";
-        ArrayList<CVOCPKiosco> lALListaRentas = new ArrayList<CVOCPKiosco>();
+    public ArrayList<CVOCKiosco> getListaClientes()throws SQLException {
+        String     lSQuery = "SELECT r.idKiosco, k.ubicacion, r.idRenta FROM Renta r, Kiosco k WHERE r.idKiosco = k.idKiosco";
+        ArrayList<CVOCKiosco> lALListaClientes = new ArrayList<CVOCKiosco>();
         
         System.out.println(lSQuery);
         try {
@@ -54,9 +57,9 @@ public class CDCPKiosco {
 
             while(mResultSet.next()) {
                 //Con rs.getXXXX podemos obtener datos del ResultSet, de tipo int, float, etc.
-                CVOCPKiosco lVOClientes = new CVOCPKiosco(mResultSet.getLong(1),"" + mResultSet.getString(2),mResultSet.getLong(3));
+                CVOCKiosco lVOClientes = new CVOCKiosco(mResultSet.getInt(1),mResultSet.getString(2),mResultSet.getLong(3));
                 //Agregamos a la colecciÛn los VO generados en la instrucciÛn anterior
-                lALListaRentas.add(lVOClientes);
+                lALListaClientes.add(lVOClientes);
             } //fin de while
         //Regresamos los datos contenidos en la colecciÛn haciendo un cast y
         //convirtiendo la colecciÛn en ArrayList
@@ -79,10 +82,10 @@ public class CDCPKiosco {
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-                lALListaRentas = null;
+                lALListaClientes = null;
             }
         }
-        return lALListaRentas;
+        return lALListaClientes;
     }
 
     /*
