@@ -1,10 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import VO.CVOCliente;
+import Negocio.CNAlta;
 import javax.swing.ImageIcon;
 
 /**
@@ -19,6 +21,8 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
     public CIConsultasPorKiosco() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
+        if(tblVConsulta.getHeight()!= 0)
+            tblVConsulta.setRowSelectionInterval(0,0);
     }
 
     /**
@@ -30,7 +34,8 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jSPConsulta = new javax.swing.JScrollPane();
+        tblVConsulta = new javax.swing.JTable();
         jBRegresar = new javax.swing.JButton();
         jBConsultar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -39,12 +44,31 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
         setTitle("Consultas: rentas por Kiosco");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 385, 207));
+
+        tblVConsulta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jSPConsulta.setViewportView(tblVConsulta);
+
+        getContentPane().add(jSPConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 385, 207));
 
         jBRegresar.setBackground(new java.awt.Color(0, 0, 0));
         jBRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         jBRegresar.setForeground(new java.awt.Color(255, 255, 255));
         jBRegresar.setText("Regresar");
+        jBRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBRegresarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jBRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 140, -1));
 
         jBConsultar.setBackground(new java.awt.Color(0, 0, 0));
@@ -60,6 +84,13 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegresarActionPerformed
+        Interfaz.CIMenuP mp;
+        mp = new CIMenuP();
+        this.dispose();
+        mp.setVisible(true);
+    }//GEN-LAST:event_jBRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -69,6 +100,8 @@ public class CIConsultasPorKiosco extends javax.swing.JFrame {
     private javax.swing.JButton jBConsultar;
     private javax.swing.JButton jBRegresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jSPConsulta;
+    private javax.swing.JTable tblVConsulta;
     // End of variables declaration//GEN-END:variables
+    private CtblAConsultaPorKiosco tblMCPKiosco = new CtblAConsultaPorKiosco();
 }

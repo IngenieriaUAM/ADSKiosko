@@ -4,7 +4,7 @@ package Interfaz;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-import VO.CVOConsultaPorKiosco;
+import VO.CVOCPKiosco;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
@@ -59,17 +59,17 @@ public class CtblAConsultaPorKiosco extends AbstractTableModel {
     @Override
     public Object getValueAt(int renglon, int columna) {
         Object objetoRetorno = null;
-        CVOConsultaPorKiosco l_CVOConsultaPorKiosco = (CVOConsultaPorKiosco) items.get(renglon);
+        CVOCPKiosco l_CVOCPKiosco = (CVOCPKiosco) items.get(renglon);
 
         switch (columna) {
             case 0:
-                objetoRetorno = l_CVOConsultaPorKiosco.getIdKiosco();
+                objetoRetorno = l_CVOCPKiosco.getIdKiosko();
                 break;
             case 1:
-                objetoRetorno = l_CVOConsultaPorKiosco.getUbicacion();
+                objetoRetorno = l_CVOCPKiosco.getUbicacionKiosko();
                 break;
             case 2:
-                objetoRetorno = l_CVOConsultaPorKiosco.getNumeroRentas();
+                objetoRetorno = l_CVOCPKiosco.getIdRenta();
                 break;
         }
         return objetoRetorno;
