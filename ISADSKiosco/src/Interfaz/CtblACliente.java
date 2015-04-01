@@ -1,17 +1,9 @@
 package Interfaz;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 import VO.CVOCliente;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author lucas
- */
 /*
  * @author Lucas
  *

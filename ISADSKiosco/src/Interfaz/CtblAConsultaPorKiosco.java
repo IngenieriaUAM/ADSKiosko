@@ -10,10 +10,10 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author lucas
+ * @author neto
  */
 /*
- * @author Lucas
+ * @author neto
  *
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates

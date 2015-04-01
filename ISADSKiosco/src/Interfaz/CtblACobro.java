@@ -5,19 +5,11 @@ import VO.CVOCliente;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author Elementary
- */
 public class CtblACobro extends AbstractTableModel{
    private static final long serialVersionUID = 1L;
     @SuppressWarnings("unchecked")
     ArrayList items = null;
     String columnNames[] ={"NOMBRE", "CUENTA BANCO", "DEUDA", "DESCRIPCIÓN", "CONCEPTO"};
-
-    /*
-     * Constructor por default
-     */
 
     /*
      * Regresa el n˙mero de renglones
@@ -68,9 +60,6 @@ public class CtblACobro extends AbstractTableModel{
         return objetoRetorno;
     }
 
-    /**
-     *
-     */
     public String getColumnName(int p_i_Columna) {
         return columnNames[p_i_Columna].toString();
     }

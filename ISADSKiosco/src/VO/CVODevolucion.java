@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package VO;
  import java.util.Random;
 import java.sql.Date;
 
-/**
- *
- * @author ivanomar
- */
 public class CVODevolucion {
   private Long idDevolucion;
   private Long idrenta;
@@ -21,11 +12,6 @@ public class CVODevolucion {
   private String fechadevolucion;
   private Long multa;
 
- /*
-  * Constructor por default
-  */
-  public CVODevolucion() {
-  }
 
     public CVODevolucion(Long idDevolucion, Long idrenta, Long idCliente, Long idBicicleta, String NombreCliente, String fechainicio, String fechadevolucion, Long multa) {
         this.idDevolucion = idDevolucion;
