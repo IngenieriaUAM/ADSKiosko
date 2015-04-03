@@ -24,6 +24,22 @@ public class CVORPDKiosco {
         this.fecha = fecha;
         this.numeroRentas = numeroRentas;
     }
+    
+    public boolean equals(CVORPDKiosco oVORPDKiosco){
+        if(oVORPDKiosco.getIdKiosko() == this.idKiosko){
+            if(oVORPDKiosco.getUbicacionKiosko().equalsIgnoreCase(this.getUbicacionKiosko())){
+                if(oVORPDKiosco.getFecha().equalsIgnoreCase(this.getFecha())){
+                    if(oVORPDKiosco.getNumeroRentas() == this.numeroRentas){
+                        return true;
+                    }
+                    return false;
+                }
+                return false;
+            }
+            return false;
+        }
+        return false;
+    }
 
     public Long getIdKiosko() {
         return idKiosko;
