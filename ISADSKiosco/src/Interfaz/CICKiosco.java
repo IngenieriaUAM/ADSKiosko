@@ -32,7 +32,7 @@ public class CICKiosco extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gestor de Clientes");
+        setTitle("Consultad por Kiosco");
         setBounds(new java.awt.Rectangle(300, 300, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setExtendedState(6);
