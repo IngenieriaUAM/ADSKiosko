@@ -46,9 +46,19 @@ public class CNCKioscoTest {
     public void testGetListaClientes() throws Exception {
         System.out.println("getListaClientes");
         CNCKiosco instance = new CNCKiosco();
-        ArrayList<CVOCKiosco> expResult = null;
+        ArrayList<CVOCKiosco> expResult = new ArrayList<CVOCKiosco>();
+        expResult.add(new CVOCKiosco(1, "calle de las animas", 1L));
+        expResult.add(new CVOCKiosco(1, "calle de las animas", 2L));
+        expResult.add(new CVOCKiosco(1, "calle de las animas", 3L));
+        expResult.add(new CVOCKiosco(2, "av. las torres 10 cerrada", 4L));
+        expResult.add(new CVOCKiosco(2, "av. las torres 10 cerrada", 5L));
+
         ArrayList<CVOCKiosco> result = instance.getListaClientes();
-        assertEquals(expResult, result);
+        int i = 0;
+        while(i<result.size()){
+            assertTrue(instance.getListaClientes().get(i).equals(expResult.get(i)));
+            i++;
+        }
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
