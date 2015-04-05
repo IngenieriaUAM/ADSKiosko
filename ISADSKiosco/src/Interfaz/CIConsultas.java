@@ -5,6 +5,9 @@
  */
 package Interfaz;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
@@ -54,13 +57,13 @@ public class CIConsultas extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Consulta de rentas por dia");
+        jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 390, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 390, -1));
 
         jButton3.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -70,7 +73,7 @@ public class CIConsultas extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 230, 390, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 390, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -82,13 +85,17 @@ public class CIConsultas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new CICKiosco().setVisible(true);
+        try {
+            new CIConsultasPorKiosco().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(CIConsultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
         dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new CIConsultaDia().setVisible(true);
+        new CIMenuP().setVisible(true);
         dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
