@@ -20,7 +20,7 @@ public class Banco {
      *
      * @param numCuentaCliente
      * @param montoACobrar
-     * @return
+     * @return true siempre
      */
     public boolean cobroBanco(int numCuentaCliente, int montoACobrar){
         return true;

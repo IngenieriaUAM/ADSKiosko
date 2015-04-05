@@ -8,7 +8,7 @@ public class CDDAOFactory{
   //Atributos
   private String     url = "jdbc:mysql://localhost/BDBicicletas?";
   private String     usuario = "root";
-  private String     password = "2113042338";
+  private String     password = "";
   private Connection conexion;
 
   public CDDAOFactory()  {

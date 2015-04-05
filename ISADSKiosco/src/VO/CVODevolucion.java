@@ -2,6 +2,10 @@ package VO;
  import java.util.Random;
 import java.sql.Date;
 
+/**
+ *
+ * @author Jonathan
+ */
 public class CVODevolucion {
   private Long idDevolucion;
   private Long idrenta;
@@ -12,6 +16,12 @@ public class CVODevolucion {
   private String fechadevolucion;
   private Long multa;
 
+
+ /*
+  * Constructor por default
+  */
+  public CVODevolucion() {
+  }
 
     public CVODevolucion(Long idDevolucion, Long idrenta, Long idCliente, Long idBicicleta, String NombreCliente, String fechainicio, String fechadevolucion, Long multa) {
         this.idDevolucion = idDevolucion;

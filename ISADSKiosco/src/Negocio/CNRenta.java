@@ -41,4 +41,8 @@ public class CNRenta {
         return oDRenta.buscaRenta(pVORenta);
     }
     
+    public Object getNumeroRentas(int i) throws SQLException {
+       return oDRenta.getNumeroRenta(i);
+       }
+
 }

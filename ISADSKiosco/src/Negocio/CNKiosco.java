@@ -8,6 +8,7 @@ package Negocio;
 import Datos.CDKiosco;
 import VO.CVOKiosco;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,6 +25,11 @@ public class CNKiosco {
     
     public CVOKiosco buscaKiosco(Long idKiosco) throws SQLException{
         return oDKiosco.buscaKiosco(idKiosco);
+    }
+
+    public ArrayList<CVOKiosco> getListaKiosco() throws SQLException {
+        return oDKiosco.getListaKiosco();
+        
     }
     
 }

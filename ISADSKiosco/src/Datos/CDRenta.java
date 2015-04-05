@@ -129,5 +129,48 @@ public class CDRenta {
         }
         return null;
     }
+public Object getNumeroRenta(int i) throws SQLException {
+        String     lSQuery = "SELECT COUNT(*) FROM Renta WHERE idKiosco = '"+i+"'";
+        System.out.println(lSQuery);
+        try {
+            //Obtiene una conexión con la base de datos
+            this.mConexion = this.mDAOFactory.abreConexion();
+            //Crea la Instrucción
+            this.mInstruccionSQL = this.mConexion.createStatement();
+            //Ejecuta la consulta SQL
+            this.mResultSet = this.mInstruccionSQL.executeQuery(lSQuery);
+            
+            if(mResultSet.next()) {
+                System.out.println(mResultSet.getInt(1)+" tamaño del resultset");
+                return mResultSet.getInt(1);
+            }
+            else{
+                return null;
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            if (this.mConexion == null) {
+                throw new SQLException("No es posible establecer la conexion");
+            }
+        }catch(NullPointerException npe){
+            return null;
+        } finally {
+            try {
+                if(this.mResultSet != null) {
+                    this.mResultSet.close();
+                }
+                if(this.mInstruccionSQL != null) {
+                    this.mInstruccionSQL.close();
+                }
+                if(this.mConexion != null) {
+                    this.mConexion.close();
+                }
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
     
 }

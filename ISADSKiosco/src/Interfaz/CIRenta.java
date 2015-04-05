@@ -277,7 +277,7 @@ public class CIRenta extends javax.swing.JFrame {
         } catch(NullPointerException npe){
             JOptionPane.showMessageDialog(this, "No existe la bicicleta","Error",JOptionPane.ERROR_MESSAGE);
         } catch(NumberFormatException nfe){
-            JOptionPane.showMessageDialog(this, "Erro de identificador","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error de identificador","Error",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jTxtIdBicicletaFocusLost
 

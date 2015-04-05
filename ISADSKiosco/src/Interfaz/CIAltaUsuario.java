@@ -317,10 +317,10 @@ public class CIAltaUsuario extends javax.swing.JFrame {
         try{
             if(!Character.isDigit(evt.getKeyChar())&&!Character.isISOControl(evt.getKeyChar())){
                 evt.consume();
-                throw new Exception("La matricula es numerica");}
+                throw new Exception("El id es numerico");}
             if(jTxtidCliente.getText().length()>=10){
                 evt.consume();
-                throw new Exception("La matricula es de 10 digitos");
+                throw new Exception("El id es de 10 digitos");
         }
         }
         catch(Exception E){

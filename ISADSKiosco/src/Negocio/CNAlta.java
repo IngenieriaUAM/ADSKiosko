@@ -37,7 +37,7 @@ public class CNAlta {
 
     public void setModificaCliente(CVOCliente pVOCliente) throws SQLException {
 
-        oDAlta.setModificaAlumno(pVOCliente);
+        oDAlta.setModificaCliente(pVOCliente);
     }
 
     public void setEliminaCliente(CVOCliente pVOCliente) throws SQLException {

@@ -124,7 +124,7 @@ public class CDAlta {
                 JOptionPane.showMessageDialog(null, "Se agrego correctamente el cliente","Cliente",JOptionPane.INFORMATION_MESSAGE);
            System.out.println(e.getErrorCode());
             if (e.getErrorCode() == 1062)
-                throw new SQLException("Matricula Repedida");
+                throw new SQLException("ID Repedido");
             if (this.mConexion == null) {
                 throw new SQLException("No es posible establecer la conexion");
             }
@@ -147,11 +147,11 @@ public class CDAlta {
     }
     
     /*
-     * Elimina un registro
+     * Modifica un registro
      * @param alumno VoAlumno con los valores del registro a eliminar
      * @throws SQLException En caso de error
      */
-    public void setModificaAlumno(CVOCliente pVOCliente) {
+    public void setModificaCliente(CVOCliente pVOCliente) throws SQLException {
         try {
             String lSQuery = "UPDATE CLIENTE SET " + 
                                      "NombreCliente = '" + pVOCliente.getNombreCliente() + "', " +
@@ -171,12 +171,17 @@ public class CDAlta {
             //Ejecuta la sentencia SQL
             mInstruccionSQL.execute(lSQuery);
             //Guarda los cambios
-            //mConexion.commit();
+            mConexion.commit();
         }
         catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+            if(e.getErrorCode()==0)
+                JOptionPane.showMessageDialog(null, "Se modificó correctamente el cliente","Cliente",JOptionPane.INFORMATION_MESSAGE);
+            if (e.getErrorCode() == 1062)
+                throw new SQLException("Id Repedido");
+            if (this.mConexion == null) {
+                throw new SQLException("No es posible establecer la conexion");
+            }
+	}
         finally {
             try {
                 //Cierra el statement
@@ -199,7 +204,7 @@ public class CDAlta {
      * @param alumno VoAlumno con los valores del registro a eliminar
      * @throws SQLException En caso de error
      */
-    public void setEliminaCliente(CVOCliente pVOCliente) {
+    public void setEliminaCliente(CVOCliente pVOCliente) throws SQLException {
         try {
             String lSQuery = "DELETE FROM CLIENTE WHERE " +
                                      "idCliente = '" + pVOCliente.getidCliente() + "'" ;
@@ -212,13 +217,24 @@ public class CDAlta {
             //Ejecuta la sentencia SQL
             mInstruccionSQL.execute(lSQuery);
             //Guarda los cambios
-            //mConexion.commit();
+            mConexion.commit();
         }
         catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println(e.getErrorCode()+e.getMessage());
+            if(e.getErrorCode()==0)
+                JOptionPane.showMessageDialog(null, "Se Eliminó correctamente el cliente","Cliente",JOptionPane.INFORMATION_MESSAGE);
             
-        }
+            if(e.getErrorCode()==1451){
+                JOptionPane.showMessageDialog(null, "No se puede eliminar el cliente","Cliente",JOptionPane.ERROR_MESSAGE);
+                throw new SQLException();
+            }
+                
+            if (e.getErrorCode() == 1062)
+                throw new SQLException("Id Repedido");
+            if (this.mConexion == null) {
+                throw new SQLException("No es posible establecer la conexion");
+            }
+	}
         finally {
             try {
                 //Cierra el statement

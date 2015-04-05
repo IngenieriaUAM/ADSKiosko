@@ -92,5 +92,55 @@ public class CDKiosco {
             System.out.println("Conexión cerrada." );
         }
     }  
+
+    public ArrayList<CVOKiosco> getListaKiosco()throws SQLException {
+        String     lSQuery = "SELECT * FROM Kiosco";
+        ArrayList<CVOKiosco> lALListaClientes = new ArrayList<CVOKiosco>();
+        
+        System.out.println(lSQuery);
+        try {
+            //Obtiene una conexión con la base de datos
+            this.mConexion = this.mDAOFactory.abreConexion();
+            //Crea la Instrucción
+            this.mInstruccionSQL = this.mConexion.createStatement();
+            //Ejecuta la consulta SQL
+            this.mResultSet = this.mInstruccionSQL.executeQuery(lSQuery);
+            /* Al principio el ResultSet est· posicionado antes del primer registro (en donde se encuentran los metadatos),
+             * por lo que hay que recorrerlo al primer registro, y si no existe ninguno
+             * el resultset regresa falso.
+             */
+
+            while(mResultSet.next()) {
+                //Con rs.getXXXX podemos obtener datos del ResultSet, de tipo int, float, etc.
+                CVOKiosco lVOKiosco = new CVOKiosco(mResultSet.getLong(1),"" + mResultSet.getString(2));
+                //Agregamos a la colecciÛn los VO generados en la instrucciÛn anterior
+                lALListaClientes.add(lVOKiosco);
+            } //fin de while
+        //Regresamos los datos contenidos en la colecciÛn haciendo un cast y
+        //convirtiendo la colecciÛn en ArrayList
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            if (this.mConexion == null) {
+                throw new SQLException("No es posible establecer la conexion");
+            }
+        } finally {
+            try {
+                if(this.mResultSet != null) {
+                    this.mResultSet.close();
+                }
+                if(this.mInstruccionSQL != null) {
+                    this.mInstruccionSQL.close();
+                }
+                if(this.mConexion != null) {
+                    this.mConexion.close();
+                }
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                lALListaClientes = null;
+            }
+        }
+        return lALListaClientes;
+    }
     
 }
