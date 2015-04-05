@@ -153,6 +153,8 @@ public class CIPago extends javax.swing.JFrame {
         CNAlta oNCliente = new CNAlta();
         try {
             oVAlta=oNCliente.buscaCliente(Long.parseLong(txtFidCliente.getText()));
+            if(oVAlta.getEstadoPago().equals("Pagado"))
+                throw new Exception("El pago ya se realizó");
             txtFnombreCliente.setText(oVAlta.getNombreCliente());
             txtFmensualidad.setText("200");
             txtFmultas.setText("0.0");
@@ -163,6 +165,9 @@ public class CIPago extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Intrudusca un número","Error",JOptionPane.ERROR_MESSAGE);
         } catch (NullPointerException npe){
             JOptionPane.showMessageDialog(this, "El cliente no existe","Error",JOptionPane.ERROR_MESSAGE);
+            limpiaCampos();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
             limpiaCampos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed

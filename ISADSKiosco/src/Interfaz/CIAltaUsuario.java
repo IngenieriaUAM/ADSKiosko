@@ -289,8 +289,11 @@ public class CIAltaUsuario extends javax.swing.JFrame {
                 mListaCliente.set(mRegSel, oVOAlta);
             }
             if (mOp == ELIMINAR) {
+                if(JOptionPane.showConfirmDialog(this, "Esta seguro de agregar el pago","Confirmar",JOptionPane.YES_NO_OPTION)==0){
                 oNAlta.setEliminaCliente(oVOAlta);
                 mListaCliente.remove(mRegSel);
+            }
+                
             }
 
             this.dispose();
