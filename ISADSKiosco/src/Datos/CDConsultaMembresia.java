@@ -28,7 +28,7 @@ public class CDConsultaMembresia {
     }
 
     public ArrayList<CVOConsultaMembresia> getListaConsultaMembresia(Long idCliente) throws SQLException {
-        String     lSQuery = "SELECT b.idBicicleta,b.tipoBicicleta,r.fechaInicio,r.fechaDev,c.nombreCliente FROM Renta r, Cliente c, Bicicleta b WHERE r.idCliente='"+idCliente+"' and b.idBicicleta=r.idBicicleta";
+        String     lSQuery = "SELECT b.idBicicleta,b.tipoBicicleta,r.fechaInicio,r.fechaDev,c.nombreCliente FROM Renta r, Cliente c, Bicicleta b WHERE r.idCliente='"+idCliente+"' and b.idBicicleta=r.idBicicleta group by idBicicleta";
         ArrayList<CVOConsultaMembresia> listaUm = new ArrayList<CVOConsultaMembresia>();
         
         System.out.println(lSQuery);

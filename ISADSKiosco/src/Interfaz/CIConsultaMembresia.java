@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -64,6 +65,7 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
         lbNombre.setText("Nombre:");
         getContentPane().add(lbNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, 23));
 
+        txtFnombre.setEditable(false);
         txtFnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFnombreActionPerformed(evt);
@@ -99,6 +101,7 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
         lbRentas.setText("Total de Rentas:");
         getContentPane().add(lbRentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
+        txtFnumRentas.setEditable(false);
         txtFnumRentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFnumRentasActionPerformed(evt);
@@ -120,7 +123,7 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
             oVCm=oNCm.getListaConsultaMembresia(Long.parseLong(txtFidUsuario.getText()));
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             Object [] kiosco = new Object[4]; 
-            txtFnombre.setText(oVCm.get(1).getNombreCliente());
+            txtFnombre.setText(oVCm.get(0).getNombreCliente());
                 for(int i=0;i<oVCm.size();i++){
                 kiosco[0]=oVCm.get(i).getIdBicicleta();
                 kiosco[1]=oVCm.get(i).getTipoBicicleta();
@@ -128,11 +131,22 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
                 kiosco[3]=oVCm.get(i).getFechaDev();
                 model.addRow(kiosco);
                 }
-            txtFnumRentas.setText(model.getRowCount()+"");
+            txtFnumRentas.setText(oVCm.size()+"");
             
         } catch (SQLException ex) {
-            Logger.getLogger(CIConsultaMembresia.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "No existe el cliente", "", JOptionPane.INFORMATION_MESSAGE);
+            txtFidUsuario.setText("");
+            txtFidUsuario.requestFocus();
+        }catch (IndexOutOfBoundsException iobe){
+            JOptionPane.showMessageDialog(this, "El cliente no tiene rentas aun", "", JOptionPane.INFORMATION_MESSAGE);
+            txtFidUsuario.setText("");
+            txtFidUsuario.requestFocus();
+        }catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(this, "Id no valido", "Error", JOptionPane.ERROR_MESSAGE);
+            txtFidUsuario.setText("");
+            txtFidUsuario.requestFocus();
         }
+                
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtFnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFnombreActionPerformed

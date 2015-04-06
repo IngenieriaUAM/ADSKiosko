@@ -83,6 +83,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFnombre">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFnombreActionPerformed"/>
       </Events>
@@ -184,6 +187,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFnumRentas">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFnumRentasActionPerformed"/>
       </Events>
