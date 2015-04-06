@@ -97,7 +97,7 @@ public class CVODevolucion {
     }
 
     public Long getMulta() {
-        return 0L;
+        return multa;
     }
 
  

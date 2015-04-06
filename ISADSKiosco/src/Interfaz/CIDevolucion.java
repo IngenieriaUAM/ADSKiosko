@@ -204,7 +204,7 @@ public class CIDevolucion extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarActionPerformed
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        CVODevolucion oVDevolucion = new CVODevolucion(0L,Long.parseLong(txtFidRenta.getText()),Long.parseLong(txtFidCliente.getText()),Long.parseLong(txtFidBicicleta.getText()),txtFnombreCliente.getText(),"now()","now",0L);
+        CVODevolucion oVDevolucion = new CVODevolucion(0L,Long.parseLong(txtFidRenta.getText()),Long.parseLong(txtFidCliente.getText()),Long.parseLong(txtFidBicicleta.getText()),txtFnombreCliente.getText(),"now()","now",Long.parseLong(txtFmulta.getText()));
         CNDevolucion oNDevolucion = new CNDevolucion();
         try {
             oNDevolucion.setAgregaDevolucion(oVDevolucion);

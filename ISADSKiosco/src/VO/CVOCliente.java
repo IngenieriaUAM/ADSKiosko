@@ -15,6 +15,7 @@ public class CVOCliente
   private int idKiosco;
   private String estadoPago;
   private Long saldo;
+  private Long multa;
 
  /*
   * Constructor por default
@@ -23,7 +24,7 @@ public class CVOCliente
   {
   }
 
-  public CVOCliente(Long pidCliente,String pNombreCliente,Date pFechaNacimiento,char pSexo,int pTarjeta,int pCodigoTarjeta,String pDireccion,Date pFechaInsc,int pidKiosco, String pEstadoPago, Long pSaldo ){
+  public CVOCliente(Long pidCliente,String pNombreCliente,Date pFechaNacimiento,char pSexo,int pTarjeta,int pCodigoTarjeta,String pDireccion,Date pFechaInsc,int pidKiosco, String pEstadoPago, Long pSaldo, Long pMulta ){
         this.setidCliente(pidCliente);
         this.setNombreCliente(pNombreCliente);
         this.setFechaNacimiento(pFechaNacimiento);
@@ -35,8 +36,14 @@ public class CVOCliente
         this.setidKiosco(pidKiosco);
         this.setSaldo(pSaldo);
         this.setEstadoPago(pEstadoPago);
+        this.multa=pMulta;
+        
         
   }
+
+    public Long getMulta() {
+        return multa;
+    }
 
     public Long getIdCliente() {
         return idCliente;

@@ -57,7 +57,7 @@ public class CDAlta {
 
             while(mResultSet.next()) {
                 //Con rs.getXXXX podemos obtener datos del ResultSet, de tipo int, float, etc.
-                CVOCliente lVOClientes = new CVOCliente(mResultSet.getLong(1),"" + mResultSet.getString(2) ,mResultSet.getDate(3),mResultSet.getString(4).charAt(0),mResultSet.getInt(5),mResultSet.getInt(6),""+mResultSet.getString(7),mResultSet.getDate(8),mResultSet.getInt(9),mResultSet.getString(10),mResultSet.getLong(11));
+                CVOCliente lVOClientes = new CVOCliente(mResultSet.getLong(1),"" + mResultSet.getString(2) ,mResultSet.getDate(3),mResultSet.getString(4).charAt(0),mResultSet.getInt(5),mResultSet.getInt(6),""+mResultSet.getString(7),mResultSet.getDate(8),mResultSet.getInt(9),mResultSet.getString(10),mResultSet.getLong(11),mResultSet.getLong(12));
                 //Agregamos a la colecciÛn los VO generados en la instrucciÛn anterior
                 lALListaClientes.add(lVOClientes);
             } //fin de while
@@ -265,7 +265,7 @@ public class CDAlta {
             this.mResultSet = this.mInstruccionSQL.executeQuery(lSQuery);
             
             if(mResultSet.next()) {
-                CVOCliente voCliente = new CVOCliente(mResultSet.getLong(1),"" + mResultSet.getString(2) ,mResultSet.getDate(3),mResultSet.getString(4).charAt(0),mResultSet.getInt(5),mResultSet.getInt(6),""+mResultSet.getString(7),mResultSet.getDate(8),mResultSet.getInt(9),mResultSet.getString(10),mResultSet.getLong(11));
+                CVOCliente voCliente = new CVOCliente(mResultSet.getLong(1),"" + mResultSet.getString(2) ,mResultSet.getDate(3),mResultSet.getString(4).charAt(0),mResultSet.getInt(5),mResultSet.getInt(6),""+mResultSet.getString(7),mResultSet.getDate(8),mResultSet.getInt(9),mResultSet.getString(10),mResultSet.getLong(11),mResultSet.getLong(12));
                 return voCliente ;
             }
             else{

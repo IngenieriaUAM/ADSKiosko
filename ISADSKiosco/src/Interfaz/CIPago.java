@@ -152,14 +152,16 @@ public class CIPago extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         CVOCliente oVAlta = new CVOCliente();
         CNAlta oNCliente = new CNAlta();
+        Long multa;
         try {
             oVAlta=oNCliente.buscaCliente(Long.parseLong(txtFidCliente.getText()));
+            multa=oVAlta.getSaldo()-200L;
             if(oVAlta.getEstadoPago().equals("Pagado"))
                 throw new Exception("El pago ya se realizó");
             txtFnombreCliente.setText(oVAlta.getNombreCliente());
-            txtFmensualidad.setText("200");
-            txtFmultas.setText("0.0");
-            txtFtotal.setText("200");
+            txtFmensualidad.setText(oVAlta.getSaldo()+"");
+            txtFmultas.setText(""+oVAlta.getMulta());
+            txtFtotal.setText(oVAlta.getSaldo()+oVAlta.getMulta()+"");
         } catch (SQLException ex) {
             Logger.getLogger(CIPago.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NumberFormatException nfe){
