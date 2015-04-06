@@ -6,6 +6,7 @@ import VO.CVOUsuario;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -18,6 +19,8 @@ public class CIinicioSesion extends javax.swing.JFrame {
     public CIinicioSesion() {
         initComponents();
                 setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
+                 Icon img = new ImageIcon(getClass().getResource("/imagenes/menua.jpg"));
+                 //.setIcon(img);
 
     }
 
@@ -39,20 +42,22 @@ public class CIinicioSesion extends javax.swing.JFrame {
         jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("INICIO DE SESION");
+        setTitle("INICIO DE SESIÓN");
 
-        jLTitulo.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLTitulo.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); 
         jLTitulo.setForeground(new java.awt.Color(0, 102, 102));
         jLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLTitulo.setText("Kiosko de Bicicletas");
+        jLTitulo.setText("Kiosco de Bicicletas");
+        
 
-        jLUsuario.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLUsuario.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); 
         jLUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLUsuario.setText("Usuario:");
 
-        jLContrasena.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        jLContrasena.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); 
         jLContrasena.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLContrasena.setText("Contraseña:");
+        
 
         jTFUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +66,9 @@ public class CIinicioSesion extends javax.swing.JFrame {
         });
 
         jBSalir.setText("Salir");
+         jBSalir.setBackground(new java.awt.Color(0, 0, 0));
+        jBSalir.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); 
+        jBSalir.setForeground(new java.awt.Color(255, 255, 255));
         jBSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBSalirActionPerformed(evt);
@@ -68,9 +76,16 @@ public class CIinicioSesion extends javax.swing.JFrame {
         });
 
         jBAceptar.setText("Aceptar");
+        jBAceptar.setBackground(new java.awt.Color(0, 0, 0));
+        jBAceptar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); 
+        jBAceptar.setForeground(new java.awt.Color(255, 255, 255));
+      
         jBAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
+                    
+                     
+      
                     jBAceptarActionPerformed(evt);
                 } catch (SQLException ex) {
                     Logger.getLogger(CIinicioSesion.class.getName()).log(Level.SEVERE, null, ex);
@@ -92,13 +107,13 @@ public class CIinicioSesion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(186, 186, 186)
-                        .addComponent(jLTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(68, 68, 68)
-                            .addComponent(jBAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(12, 12, 12))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(42, 42, 42)
@@ -130,8 +145,8 @@ public class CIinicioSesion extends javax.swing.JFrame {
                         .addGap(2, 2, 2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37))
         );
 

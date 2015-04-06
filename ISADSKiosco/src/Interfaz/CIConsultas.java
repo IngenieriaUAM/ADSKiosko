@@ -22,6 +22,7 @@ public class CIConsultas extends javax.swing.JFrame {
     public CIConsultas() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
+          setTitle("CONSULTAS");
     }
 
     /**

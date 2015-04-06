@@ -28,6 +28,7 @@ public class CIDevolucion extends javax.swing.JFrame {
     public CIDevolucion() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
+          setTitle("DEVOLUCIÓN");
     }
     
     @SuppressWarnings("unchecked")
