@@ -19,8 +19,7 @@ public class CIinicioSesion extends javax.swing.JFrame {
     public CIinicioSesion() {
         initComponents();
                 setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
-                 Icon img = new ImageIcon(getClass().getResource("/imagenes/menua.jpg"));
-                 //.setIcon(img);
+                 
 
     }
 
