@@ -21,6 +21,7 @@ public class CIPago extends javax.swing.JFrame {
     public CIPago() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/bicycle_icon.jpg")).getIm­age());
+          setTitle("PAGO");
     }
 
     @SuppressWarnings("unchecked")
