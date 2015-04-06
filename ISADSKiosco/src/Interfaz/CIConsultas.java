@@ -35,9 +35,9 @@ public class CIConsultas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnConsutaPorKiosco = new javax.swing.JButton();
+        btonRegresar = new javax.swing.JButton();
+        btnConsutaMembresia = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,38 +46,38 @@ public class CIConsultas extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Consulta de rentas por Kiosco");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnConsutaPorKiosco.setBackground(new java.awt.Color(0, 0, 0));
+        btnConsutaPorKiosco.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnConsutaPorKiosco.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsutaPorKiosco.setText("Consulta de rentas por Kiosco");
+        btnConsutaPorKiosco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnConsutaPorKioscoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 390, 60));
+        jPanel1.add(btnConsutaPorKiosco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 390, 60));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Regresar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btonRegresar.setBackground(new java.awt.Color(0, 0, 0));
+        btonRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btonRegresar.setText("Regresar");
+        btonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btonRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 140, -1));
+        jPanel1.add(btonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 140, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Consulta de uso de membresia");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnConsutaMembresia.setBackground(new java.awt.Color(0, 0, 0));
+        btnConsutaMembresia.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        btnConsutaMembresia.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsutaMembresia.setText("Consulta de uso de membresia");
+        btnConsutaMembresia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnConsutaMembresiaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 390, 60));
+        jPanel1.add(btnConsutaMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 390, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -88,7 +88,7 @@ public class CIConsultas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnConsutaPorKioscoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsutaPorKioscoActionPerformed
         try {
             new CIConsultasPorKiosco().setVisible(true);
         } catch (SQLException ex) {
@@ -96,18 +96,18 @@ public class CIConsultas extends javax.swing.JFrame {
         }
         dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnConsutaPorKioscoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btonRegresarActionPerformed
         new CIMenuP().setVisible(true);
         dispose();
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btonRegresarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnConsutaMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsutaMembresiaActionPerformed
         new CIConsultaMembresia().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnConsutaMembresiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,9 +115,9 @@ public class CIConsultas extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnConsutaMembresia;
+    private javax.swing.JButton btnConsutaPorKiosco;
+    private javax.swing.JButton btonRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

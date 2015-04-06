@@ -27,16 +27,16 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        lbIdUsuario = new javax.swing.JLabel();
+        txtFidUsuario = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
+        lbNombre = new javax.swing.JLabel();
+        txtFnombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        btnRegresar = new javax.swing.JButton();
+        lbRentas = new javax.swing.JLabel();
+        txtFnumRentas = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,32 +44,32 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
-        jLabel1.setText("IDUsuario: ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, 23));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 46, 30));
+        lbIdUsuario.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
+        lbIdUsuario.setText("IDUsuario: ");
+        getContentPane().add(lbIdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, 23));
+        getContentPane().add(txtFidUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 46, 30));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
+        btnBuscar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, -1, -1));
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
-        jLabel4.setText("Nombre:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, 23));
+        lbNombre.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
+        lbNombre.setText("Nombre:");
+        getContentPane().add(lbNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, 23));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtFnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtFnombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 550, 30));
+        getContentPane().add(txtFnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 550, 30));
 
         jTable1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -84,27 +84,27 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 567, 162));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Regresar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
+        btnRegresar.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, -1, -1));
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
-        jLabel5.setText("Total de Rentas:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        lbRentas.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 24)); // NOI18N
+        lbRentas.setText("Total de Rentas:");
+        getContentPane().add(lbRentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtFnumRentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtFnumRentasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 78, 30));
+        getContentPane().add(txtFnumRentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 78, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menua.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -113,14 +113,14 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         try {
             CNConsultaMembresia oNCm = new CNConsultaMembresia();
             ArrayList<CVOConsultaMembresia> oVCm;
-            oVCm=oNCm.getListaConsultaMembresia(Long.parseLong(jTextField1.getText()));
+            oVCm=oNCm.getListaConsultaMembresia(Long.parseLong(txtFidUsuario.getText()));
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             Object [] kiosco = new Object[4]; 
-            jTextField2.setText(oVCm.get(1).getNombreCliente());
+            txtFnombre.setText(oVCm.get(1).getNombreCliente());
                 for(int i=0;i<oVCm.size();i++){
                 kiosco[0]=oVCm.get(i).getIdBicicleta();
                 kiosco[1]=oVCm.get(i).getTipoBicicleta();
@@ -128,41 +128,41 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
                 kiosco[3]=oVCm.get(i).getFechaDev();
                 model.addRow(kiosco);
                 }
-            jTextField3.setText(model.getRowCount()+"");
+            txtFnumRentas.setText(model.getRowCount()+"");
             
         } catch (SQLException ex) {
             Logger.getLogger(CIConsultaMembresia.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtFnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFnombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtFnombreActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtFnumRentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFnumRentasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtFnumRentasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
          Interfaz.CIConsultas mp;
         mp = new CIConsultas();
         this.dispose();
         mp.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel lbIdUsuario;
+    private javax.swing.JLabel lbNombre;
+    private javax.swing.JLabel lbRentas;
+    private javax.swing.JTextField txtFidUsuario;
+    private javax.swing.JTextField txtFnombre;
+    private javax.swing.JTextField txtFnumRentas;
     // End of variables declaration//GEN-END:variables
 }
