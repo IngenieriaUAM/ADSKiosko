@@ -1,6 +1,13 @@
 package Interfaz;
 
+import Negocio.CNConsultaMembresia;
+import VO.CVOConsultaMembresia;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,10 +29,6 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jDate = new com.toedter.calendar.JDateChooser();
-        jLabel3 = new javax.swing.JLabel();
-        jDate1 = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -45,20 +48,6 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
         jLabel1.setText("IDUsuario: ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, 23));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 46, 30));
-
-        jLabel2.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
-        jLabel2.setText("Desde:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, 23));
-
-        jDate.setDateFormatString("dd/MM/yyyy");
-        getContentPane().add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 140, 30));
-
-        jLabel3.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 18)); // NOI18N
-        jLabel3.setText("Hasta:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
-
-        jDate1.setDateFormatString("dd/MM/yyyy");
-        getContentPane().add(jDate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 140, 30));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 20)); // NOI18N
@@ -125,7 +114,25 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            CNConsultaMembresia oNCm = new CNConsultaMembresia();
+            ArrayList<CVOConsultaMembresia> oVCm;
+            oVCm=oNCm.getListaConsultaMembresia(Long.parseLong(jTextField1.getText()));
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            Object [] kiosco = new Object[4]; 
+            jTextField2.setText(oVCm.get(1).getNombreCliente());
+                for(int i=0;i<oVCm.size();i++){
+                kiosco[0]=oVCm.get(i).getIdBicicleta();
+                kiosco[1]=oVCm.get(i).getTipoBicicleta();
+                kiosco[2]=oVCm.get(i).getFechaInicio();
+                kiosco[3]=oVCm.get(i).getFechaDev();
+                model.addRow(kiosco);
+                }
+            jTextField3.setText(model.getRowCount()+"");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(CIConsultaMembresia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -143,49 +150,12 @@ public class CIConsultaMembresia extends javax.swing.JFrame {
         mp.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CIConsultaMembresia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CIConsultaMembresia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CIConsultaMembresia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CIConsultaMembresia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CIConsultaMembresia().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private com.toedter.calendar.JDateChooser jDate;
-    private com.toedter.calendar.JDateChooser jDate1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

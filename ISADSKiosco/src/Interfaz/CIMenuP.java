@@ -285,6 +285,7 @@ public class CIMenuP extends javax.swing.JFrame {
     private void btnConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasActionPerformed
         ventConsultas = new CIConsultas();
         ventConsultas.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnConsultasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
